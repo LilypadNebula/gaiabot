@@ -100,6 +100,467 @@
     "type": "Passive",
     "source": "Brain Moves",
     "text": "You have a deep and abiding sense of guilt for something you have created or had a hand in creating. It could have been something you invented when you first came into your genius, or something you set into motion that you no longer have the power to stop. It may even be something beyond your ability to achieve again, this once-in-a-lifetime creation. Just as you are a world-class intellect, your shame is a world-class problem. Whatever the case may be, your role in its creation is not publicly known...yet.\nWhenever you are confronted with your shame, either mark a condition or shift Superior down and Danger up. If your shame is an NPC, they can never lose Influence over you. \nAt the end of every session, answer the question:\n• Did you take steps to make amends for your shame? \nIf the answer is yes, mark potential. If the answer is no, give Influence to one of your teammates."
+  },
+  "no powers and not nearly enough training": {
+    "name": "No powers and not nearly enough training",
+    "type": "Passive",
+    "source": "Beacon moves",
+    "text": "You’re always picking up new gear to keep yourself in the game. Whenever you pick up a new piece of gear, you can write it in as a new ability if this line is empty. The first time you use each piece of gear to directly engage a threat, unleash your powers, or defend someone, you can roll +Mundane instead of the normal Label."
+  },
+
+"wont let you down": {
+    "name": "Won’t let you down",
+    "type": "Passive",
+    "source":"Beacon Moves",
+    "text": "When you help a teammate, you can spend 2 out of the Team pool to add +2 to their roll."
+  },
+
+"pretty much a superhero": {
+    "name": "Pretty much a superhero",
+    "type": "Active",
+    "source":"Beacon Moves",
+    "text": "When you bring up your superhero name to someone important (your call) for the first time, roll + Savior. On a hit, they’ve heard of you; say which of your exploits they’ve heard about and which Label they think applies. On a 7-9, the GM will tell you something else they’ve heard, and pick a second Label they assign to you. On a miss, they don’t take you seriously or mistrust you moving forward."
+  },
+
+"cmon lucky": {
+    "name": "C’mon, Lucky",
+    "type": "Passive",
+    "source":"Beacon Moves",
+    "text": "You have a pet of some kind, a smaller companion that helps you out. Detail it. Choose three basic moves and tell the GM how it helps you with those moves. Whenever your pet could help you, take +1 to that move. If your pet ever gets hurt, treat it as taking a powerful blow."
+  },
+
+"suck it domitian": {
+    "name": "Suck it, Domitian",
+    "type": "Passive",
+    "source":"Beacon Moves",
+    "text": "When you stand strong while dramatically under fire, roll + Savior instead of + Danger to **directly engage a threat.**"
+  },
+
+"thick and thin skinned": {
+    "name": "Thick and thin skinned",
+    "type": "Passive",
+    "source":"Bull Moves",
+    "text": "Whenever you have Angry marked, take +1 ongoing to **unleash your powers.**"
+  },
+
+"youve got a head you dont need": {
+    "name": "You’ve got a head you don’t need",
+    "type": "Passive",
+    "source":"Bull Moves",
+    "text": "When you **provoke someone** with obvious threats and shows of force, roll + Danger instead of + Superior."
+  },
+
+"punch everyone": {
+    "name": "Punch everyone",
+    "type": "Passive",
+    "source":"Bull Moves",
+    "text": "Whenever you charge into a fight without hedging your bets, you can shift your Danger up and any other Label down."
+  },
+
+"there when it matters": {
+    "name": "There when it matters",
+    "type": "Passive",
+    "source":"Bull Moves",
+    "text": "When you **defend someone**, on a hit you can hold 1 instead of choosing one from the list. Spend your hold when they are in danger later to arrive on the scene ready to help."
+  },
+
+"in a china shop": {
+    "name": "In a china shop",
+    "type": "Passive",
+    "source":"Bull Moves",
+    "text": "When you **directly engage a threat**, you can cause significant collateral damage to your environment to choose an additional option, even on a miss."
+  },
+
+"physics what physics": {
+    "name": "Physics? What physics?",
+    "type": "Passive",
+    "source":"Bull Moves",
+    "text": "When you **unleash your powers** to barrel through an insurmountable barrier, roll + Danger instead of + Freak."
+  },
+
+"defender": {
+    "name": "Defender",
+    "type": "Passive",
+    "source":"Bull’s Heart",
+    "text": "When you leap to defend your love or rival in battle, roll + Danger instead of + Savior to **defend them.**"
+  },
+
+"friend": {
+    "name": "Friend",
+    "type": "Passive",
+    "source":"Bull’s Heart",
+    "text": "When you **comfort or support** your love or rival, mark potential on a hit. When your love or rival comforts or supports you, mark potential when they roll a hit."
+  },
+
+"listener": {
+    "name": "Listener",
+    "type": "Passive",
+    "source":"Bull’s Heart",
+    "text": "When you **pierce the mask** of your love or rival, you can always let them ask you a question to ask them an additional question in turn, even on a miss. These additional questions do not have to be on the list."
+ },
+
+"enabler": {
+    "name": "Enabler",
+    "type": "Passive",
+    "source":"Bull’s Heart",
+    "text": "When you **provoke** your love or rival, roll + Danger if you are trying to provoke them to rash or poorly thought out action."
+ },
+
+"mary contrary": {
+    "name": "Mary Contrary",
+    "type": "Active",
+    "source":"Delinquent Moves",
+    "text": "When someone tries to **pierce your mask**, **comfort or support you**, or **provoke you**, you can interfere. Roll + Superior. On a hit, they take a -2 on their roll. On a 10+, you also take Influence over them or clear a condition. On a miss, they get a 10+ no matter what they rolled and you mark a condition of their choice."
+  },
+
+"i dont care what you think": {
+    "name": "I don’t care what you think!",
+    "type": "Passive",
+    "source":"Delinquent Moves",
+    "text": "Whenever you reject others’ Influence, add +2 to your roll."
+  },
+
+"team what team": {
+    "name": "Team? What team?",
+    "type": "Passive",
+    "source":"Delinquent Moves",
+    "text": "When you use Team selfishly, clear a condition or mark potential. The first time in a session that you use Team to help a teammate, take +1 forward."
+  },
+
+"criminal mind": {
+    "name": "Criminal mind",
+    "type": "Passive",
+    "source":"Delinquent Moves",
+    "text": "When you assess the situation, you can always ask one of the following questions, even on a miss:\n- what here is useful or valuable to me?\n- how could I best infuriate or provoke ____________?\n- what’s the best way in/way past?"
+  },
+
+"troublemaker": {
+    "name": "Troublemaker",
+    "type": "Passive",
+    "source":"Delinquent Moves",
+    "text": "When you help a teammate through destructive, criminal, or rule-breaking actions, you can give them a +2 instead of a +1 when you spend a Team from the pool."
+  },
+
+"are you watching closely": {
+    "name": "Are you watching closely?",
+    "type": "Active",
+    "source":"Delinquent Moves",
+    "text": "When you mislead, distract, or trick someone, roll + Superior. On a hit, they are fooled, at least for a moment. On a 10+, choose three. On a 7-9, choose two.\n- you get an opportunity\n- you expose a weakness or flaw\n- you confuse them for some time\n- you avoid further entanglement\nOn a miss, you’re hopelessly embroiled in it and under pressure; mark a condition."
+  },
+
+"dark visions": {
+    "name": "Dark Visions",
+    "type": "Passive",
+    "source":"Doomsigns",
+    "text": "Mark your doom track to have a vision about the situation at hand. After the vision, ask the GM a question; they will answer it honestly."
+  },
+
+"infinite powers": {
+    "name": "Infinite Powers",
+    "type": "Passive",
+    "source":"Doomsigns",
+    "text": "Mark your doom track to use an ability from any playbook, one time."
+  },
+
+"portal": {
+    "name": "Portal",
+    "type": "Passive",
+    "source":"Doomsigns",
+    "text": "Mark your doom track to appear in a scene with anyone you want."
+  },
+
+"burning bright": {
+    "name": "Burning Bright",
+    "type": "Passive",
+    "source":"Doomsigns",
+    "text": "Mark your doom track to ignore one of the GM’s stated requirements when you call upon the resources of your sanctuary."
+  },
+
+"bolstered": {
+    "name": "Bolstered",
+    "type": "Passive",
+    "source":"Doomsigns",
+    "text": "Mark your doom track to use an Adult Move one time."
+  },
+
+"the mask": {
+    "name": "The Mask",
+    "type": "Passive",
+    "source":"Janus Moves",
+    "text": "You wear a mask and hide your real identity. Choose what Label you try to embody while wearing your mask: \n[] Freak [] Danger [] Savior [] Superior\nOnce per session, you can affirm either your heroic or secret identity to switch your Mundane with your mask’s Label.\nWhen you reveal your secret identity to someone who didn’t know it already, mark potential."
+  },
+
+"game face": {
+    "name": "Game face",
+    "type": "Passive",
+    "source":"Janus Moves",
+    "text": "When you commit yourself to save someone or defeat a terrible enemy, mark a condition and take +1 ongoing to all rolls in direct pursuit of that goal. At the end of any scene in which you don’t make progress towards that goal, mark a condition. When you fulfill your goal, mark potential."
+  },
+
+"i am what you see": {
+    "name": "I am what you see",
+    "type": "Passive",
+    "source":"Janus Moves",
+    "text": "When you spend time talking to someone about your identity, you can ask them which Label they want to impose on you; their player will tell you honestly. If you accept what they tell you, take +1 forward and either mark potential or clear a condition."
+  },
+
+"mild mannered": {
+    "name": "Mild-mannered",
+    "type": "Active",
+    "source":"Janus Moves",
+    "text": "When you try to use your civilian identity to deceive, trick, or slip past someone, roll + Mundane. On a hit they buy your facade. On a 7-9, choose one:\n- you’re still under observation\n- you leave something incriminating behind\n- you’re forced to make a fool of yourself to sell it\nOn a miss, one of your civilian obligations rears its ugly head."
+  },
+
+"ill save you": {
+    "name": "I’ll save you!",
+    "type": "Passive",
+    "source":"Janus Moves",
+    "text": "You’re willing to pay high costs to keep your loved ones safe. Reveal your secret identity to someone watching or mark a condition to **defend** a loved one as if you rolled a 12+."
+  },
+
+"dangerous web": {
+    "name": "Dangerous Web",
+    "type": "Active",
+    "source":"Janus Moves",
+    "text": "When you reveal a trap you’ve left for someone using your powers, roll + your mask’s Label. On a hit, your opponent trips into it, and you get an opening or opportunity against them. On a 10+, take +1 forward to pursuing it. On a miss, the trap inadvertently leads to a dangerous escalation."
+  },
+
+"fight the good fight": {
+    "name": "Fight the good fight",
+    "type": "Passive",
+    "source":"Legacy Moves",
+    "text": "When you pull your punches while **directly engaging a threat**, you can roll + Savior instead of + Danger. If you do, you cannot choose to impress, surprise, or frighten your foe."
+  },
+
+"i know what i am": {
+    "name": "I know what I am",
+    "type": "Passive",
+    "source":"Legacy Moves",
+    "text": "Once per scene, when you defend a teammate you can shift Savior up and another Label down in addition to any other benefits from the move, even on a miss. If you do, add 1 Team to the pool."
+  },
+
+"words of the past": {
+    "name": "Words of the past",
+    "type": "Passive",
+    "source":"Legacy Moves",
+    "text": "When you seek the guidance of one of your elders or a member of your legacy, tell them a problem you face, and ask them a question about the problem. They will answer it honestly, and tell you what to do. Take +1 ongoing if you listen. If you go your own way, mark potential."
+  },
+
+"the legacy matters": {
+    "name": "The legacy matters",
+    "type": "Passive",
+    "source":"Legacy Moves",
+    "text": "When you take Influence over someone from your legacy (or give them Influence over you), mark potential and take +1 forward. When someone from your legacy causes your Labels to shift, mark potential and take +1 forward."
+  },
+
+"never give up never surrender": {
+    "name": "Never give up, never surrender",
+    "type": "Active",
+    "source":"Legacy Moves",
+    "text": "When you **take a powerful blow** from someone with far greater power than you, use this move instead of the basic move. Roll + Savior. On a hit, you stand strong and choose one. On a 7-9, mark a condition.\n- you get an opportunity or opening against your attacker\n- you rally from the hit, and it inspires the team; add 1 Team to the pool\n- you keep your attacker’s attention\nOn a miss, you go down hard but leave your opponent off balance and vulnerable."
+  },
+
+"symbol of authority": {
+    "name": "Symbol of authority",
+    "type": "Active",
+    "source":"Legacy Moves",
+    "text": "When you give an NPC an order based on authority they recognize, roll + Savior. On a hit, they choose one:\n- do what you say\n- get out of your way\n- attack you at a disadvantage\n- freeze\nOn a 10+, you also take +1 forward against them. On a miss, they do as they please and you take -1 forward against them."
+  },
+
+"reality storm": {
+    "name": "Reality storm",
+    "type": "Passive",
+    "source":"Flares",
+    "text": "You channel a destructive burst with your powers. Spend 1 burn to **directly engage a threat** using your powers, rolling + Freak instead of + Danger. If you do, you will cause unwanted collateral damage unless you spend another burn."
+  },
+
+"shielding": {
+    "name": "Shielding",
+    "type": "Passive",
+    "source":"Flares",
+    "text": "You call up a fast protective field to stop a danger. Spend 1 burn to **defend someone** else from an immediate threat, rolling + Freak instead of + Savior."
+  },
+
+"constructs": {
+    "name": "Constructs",
+    "type": "Passive",
+    "source":"Flares",
+    "text": "Spend 1 burn to create any object with your powers, up to the size of a person. Spend an additional burn to animate it independently of yourself. The construct dissolves at the end of the scene."
+  },
+
+"moat": {
+    "name": "Moat",
+    "type": "Passive",
+    "source":"Flares",
+    "text": "Spend 1 burn to create a barrier that will hold back threats as long as you keep your attention on it. The GM may call for you to spend another burn if the barrier is threatened by particularly powerful enemies."
+  },
+
+"worship": {
+    "name": "Worship",
+    "type": "Passive",
+    "source":"Flares",
+    "text": "You put out a tremendous display of your might. Spend 1 burn to awe an audience into silence, respect, and attention when you unleash your powers."
+  },
+
+"move": {
+    "name": "Move",
+    "type": "Passive",
+    "source":"Flares",
+    "text": "Spend 1 burn to move to any place you choose within the scene, breaking through or slipping past any barriers or restraints in your way. Spend a second burn to move to any place you’ve previously been."
+  },
+
+"boost": {
+    "name": "Boost",
+    "type": "Passive",
+    "source":"Flares",
+    "text": "Spend 1 burn to supercharge a teammate’s efforts with your powers, giving them a +1 bonus to their roll as if you had spent Team from the pool."
+  },
+
+"overcharge": {
+    "name": "Overcharge",
+    "type": "Passive",
+    "source":"Flares",
+    "text": "You channel the full capacity of your incredible powers to overcome an obstacle, reshape your environment, or extend your senses. Spend 2 burn to take a 10+ when you **unleash your powers**."
+  },
+
+"elemental awareness": {
+    "name": "Elemental awareness",
+    "type": "Passive",
+    "source":"Flares",
+    "text": "Spend 1 burn and mark a condition to open your mind up to the world around you with your powers. You can ask any one question about the world around you, and the GM will answer honestly."
+  },
+
+"snatch": {
+    "name": "Snatch",
+    "type": "Passive",
+    "source":"Flares",
+    "text": "Spend 1 burn to use your powers to seize any one object up to the size of a person from someone within view."
+  },
+
+"belong in two worlds": {
+    "name": "Belong in two worlds",
+    "type": "Active",
+    "source":"Outsider Moves",
+    "text": "You have the resources that come with your station. Whenever you contact your people, roll + Superior. On a 10+, hold 3. On a 7-9, hold 2. On a miss, hold 1, but your people make an uncomfortable demand of you. Spend your hold 1 for 1 to:\n- receive a useful piece of alien technology that will allow you to use any ability from another playbook once (choose the ability when you spend the hold)\n- consult your people’s knowledge to ask the GM a question about the current situation\n- clear a condition through the comfort of contact with your home"
+  },
+
+"alien tech": {
+    "name": "Alien tech",
+    "type": "Active",
+    "source":"Outsider Moves",
+    "text": "When you alter a human device with your alien technology, roll + Freak. On a hit, you create a device that can do something impossible once and then fizzle. When you roll a 10+, choose one:\n- it works exceptionally well\n- you get an additional use out of it\nOn a miss, the device works, but it has a completely unintended side effect that the GM will reveal when you use it."
+  },
+
+"alien ways": {
+    "name": "Alien ways",
+    "type": "Passive",
+    "source":"Outsider Moves",
+    "text": "Whenever you openly disregard or undermine an important Earth custom in favor of one of your own people’s customs, shift Superior up and any other Label down."
+  },
+
+"kirbycraft": {
+    "name": "Kirby-craft",
+    "type": "Passive",
+    "source":"Outsider Moves",
+    "text": "You have a vehicle, something from your home. Detail its look, and choose two strengths and two weaknesses. When you are flying your ship, you can use it to **unleash your powers**, **directly engage a threat**, or **defend someone** using Superior.\n**Strengths**: Fast & maneuverable, chameleon plating, powerful weaponry, regenerating, dimension-shifting, size-shifting, telepathic\n**Weaknesses**: Bizarre fuel source, susceptible to _______, easily detectable, slow and clumsy, unarmed, difficult to repair"
+  },
+
+"the best of them": {
+    "name": "The best of them",
+    "type": "Passive",
+    "source":"Outsider Moves",
+    "text": "When you **comfort or support** someone by telling them how they exemplify the best parts of Earth, roll + Freak instead of + Mundane."
+  },
+
+"not so different after all": {
+    "name": "Not so different after all",
+    "type": "Active",
+    "source":"Outsider Moves",
+    "text": "When you talk about your home, roll + Freak. On a 10+, choose two. On a 7-9, choose one. During the conversation, you:\n- confess a flaw of your home; add 1 Team to the pool\n- mislead them about your home; take Influence over them\n- describe the glories of your home; clear a condition\nOn a miss, you inadvertently reveal more about yourself than you planned; tell them a secret or vulnerability you haven’t shared with Earthlings before now."
+  },
+
+"been reading the files": {
+    "name": "Been reading the files",
+    "type": "Active",
+    "source":"Protege Moves",
+    "text": "You’ve learned about the superhuman world through your mentor’s resources. When you first encounter an important superpowered phenomenon (your call), roll + Superior. On a hit, tell the team one important detail you’ve learned from your studies. The GM will tell you what, if anything, seems different from what you remember. On a 10+, ask the GM a follow-up question; they will answer it honestly. On a miss, the situation is well outside your base of knowledge; the GM will tell you why."
+  },
+
+"captain": {
+    "name": "Captain",
+    "type": "Passive",
+    "source":"Protege Moves",
+    "text": "When you **enter battle as a team**, add an extra Team to the pool and carry +1 forward if you are the leader"
+  },
+
+"venting frustration": {
+    "name": "Venting frustration",
+    "type": "Passive",
+    "source":"Protege Moves",
+    "text": "When you **directly engage** while you are Angry, you can roll + the Label your mentor denies and clear Angry"
+  },
+
+"fireside chat": {
+    "name": "Fireside chat",
+    "type": "Active",
+    "source":"Protege Moves",
+    "text": "When you seek advice from your mentor, roll + the Label they embody. On a hit they will tell you what to do. On a 10+, mark potential if you follow their advice, and take +1 ongoing to follow through. On a 7-9, you get +1 forward to see it through if you do it their way. On a miss, they don’t have time for you because something big has gone down; mark a condition, GM’s choice."
+  },
+
+"be mindful of your surroundings": {
+    "name": "Be mindful of your surroundings",
+    "type": "Passive",
+    "source":"Protege Moves",
+    "text": "When you **assess the situation** before entering into a fight, you may ask one additional question, even on a miss."
+  },
+
+"heroic tradition": {
+    "name": "Heroic tradition",
+    "type": "Passive",
+    "source":"Protege Moves",
+    "text": "When you give someone the advice that you think your mentor would give, you can roll + the Label your mentor embodies to **comfort or support someone**, instead of rolling + Mundane."
+  },
+
+"i am not my body": {
+    "name": "I am not my body",
+    "type": "Passive",
+    "source":"Transformed Moves",
+    "text": "When you **take a powerful physical blow**, you may roll as if you had two fewer conditions marked. If you do, on a 10+ you must choose to lose control of yourself in a terrible way."
+  },
+
+"not human enough": {
+    "name": "Not human enough",
+    "type": "Passive",
+    "source":"Transformed Moves",
+    "text": "When you **directly engage a threat** in a terrifying fashion, mark a condition to choose an additional option, even on a miss."
+  },
+
+"unstoppable": {
+    "name": "Unstoppable",
+    "type": "Active",
+    "source":"Transformed Moves",
+    "text": "When you smash your way through scenery to get to or away from something, roll + Danger. On a hit, the world breaks before you, and you get what you want. On a 7-9, choose one: mark a condition, leave something behind, or take something with you. On a miss, you smash through, but leave devastation in your wake or wind up somewhere worse, GM’s choice."
+  },
+
+"coming for you": {
+    "name": "Coming for you",
+    "type": "Passive",
+    "source":"Transformed Moves",
+    "text": "When you mark a condition, take +1 forward against the person you most blame for causing it."
+  },
+
+"wish i could be": {
+    "name": "Wish I could be",
+    "type": "Passive",
+    "source":"Transformed Moves",
+    "text": "When you **comfort or support someone**, if you tell them what you most envy about them, you can roll + Freak instead of + Mundane."
+  },
+
+"be the monster": {
+    "name": "Be the monster",
+    "type": "Active",
+    "source":"Transformed Moves",
+    "text": "When you frighten, intimidate, or cow others with your monstrous form, roll + Freak. On a hit, they are thrown off and make themselves vulnerable to you, or they flee. On a 10+, choose one. On a 7-9, choose two.\n- you frighten others you had not intended to scare\n- you hurt someone or break something you shouldn’t have\n- you feel like more of a monster afterward; mark a condition (GM’s choice)\nOn a miss, they react with violence, hatred, and paranoia, and you suffer the brunt of it."
   }
 }
 
