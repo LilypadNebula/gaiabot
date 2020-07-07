@@ -31,7 +31,44 @@ async def on_message(message):
         m = discord.Embed()
         m.title = res['name']
         m.color = discord.Color.blurple()
-        m.description = res['text']
+        m.description = 'Move Type: ' + res['type'] + '\n'
+        if res['playbook'] is not None:
+            m.description = m.description + 'Playbook: ' + res['playbook'] + '\n'
+        m.description = m.description + res['text']
         await message.channel.send(None, embed=m)
+    
+    #TODO: Figure out how to set command prefix per-server
+    #TODO: Handle response construction and sending separately?
+    elif  text.startswith('gaia!'):
+        command = text[5:]
+        if command.startswith('search'):
+            matches = []
+            phrase = command[6:].lstrip()
+            if phrase == '':
+                response = 'Please include a valid search term!'
+            else:
+                for move in list(moves):
+                    if phrase in move:
+                        matches.append(move)
+                if not matches:
+                    response = 'My apologies, I could not find any moves containing {}'.format(phrase)
+                else:
+                    response = 'A search of my databases has found the following moves containing {}:\n```'.format(phrase)
+                    for move_name in matches:
+                        response = response + move_name + ', '
+                    response = response[0:-2]+'```'
+            await message.channel.send(response)
+        elif command.startswith('list'):
+            response = 'The following is a list of moves stored in my databases:\n```'
+            for move_name in list(moves):
+                response = response + move_name + ', '
+            response = response[0:-2]+'```'
+            await message.author.send(response)
+        elif command.startswith('hello'):
+            response = 'Greetings {}!'.format(message.author.name)
+            await message.channel.send(response)
+
+                
+            
 
 client.run(token)

@@ -1,6 +1,22 @@
 {
   "straight up creepin": {
     "name": "Straight Up Creepin'",
+    "type": "Active",
+    "playbook":"Beacon",
     "text": "When you scope out a person or place, roll + Mundane. On a 10+, ask two. On a 7-9, ask one. \n- what’s my best way in/out? \n- what happened here recently?\n- what here is worth grabbing?\n- who or what here is not what they seem?\n- whose place is this?\nOn a miss, you find yourself in over your head. The GM will tell you why this is a bad spot."
+  },
+  "directly engage a threat": {
+    "name": "Directly Engage a Threat",
+    "type": "Active",
+    "playbook": null,
+    "text": "When you directly engage a threat, roll +Danger. On a hit, trade blows. On a 10+, pick two. On a 7-9, pick one.\n- resist or avoid their blows\n- take something from them\n- create an opportunity for your allies\n- impress, surprise, or frighten the opposition"
+  },
+  "comfort or support": {
+    "name": "Comfort or Support",
+    "type": "Active",
+    "playbook": null,
+    "text": "When you comfort or support someone, roll + Mundane. On a hit, they hear you: they mark potential, clear a condition, or shift Labels if they open up to you. On a 10+, you can also add a Team to the pool or clear a condition yourself."
   }
 }
+
+
