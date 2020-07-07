@@ -1,22 +1,417 @@
 {
+  "dummy": {
+    "name": "Foobar",
+    "type": "Lorem",
+    "source": "Ipsum Moves",
+    "text": "Dolor sit amet"
+  },
   "straight up creepin": {
     "name": "Straight Up Creepin'",
     "type": "Active",
-    "playbook":"Beacon",
+    "source":"Beacon Moves",
     "text": "When you scope out a person or place, roll + Mundane. On a 10+, ask two. On a 7-9, ask one. \n- what’s my best way in/out? \n- what happened here recently?\n- what here is worth grabbing?\n- who or what here is not what they seem?\n- whose place is this?\nOn a miss, you find yourself in over your head. The GM will tell you why this is a bad spot."
   },
   "directly engage a threat": {
     "name": "Directly Engage a Threat",
     "type": "Active",
-    "playbook": null,
-    "text": "When you directly engage a threat, roll +Danger. On a hit, trade blows. On a 10+, pick two. On a 7-9, pick one.\n- resist or avoid their blows\n- take something from them\n- create an opportunity for your allies\n- impress, surprise, or frighten the opposition"
+    "source": "Basic Moves",
+    "text": "When you **directly engage a threat**, roll +Danger. On a hit, trade blows. On a 10+, pick two. On a 7-9, pick one.\n- resist or avoid their blows\n- take something from them\n- create an opportunity for your allies\n- impress, surprise, or frighten the opposition"
+  },
+  "unleash your powers": {
+    "name": "Unleash You Powers",
+    "type": "Active",
+    "source": "Basic Moves",
+    "text": "When you **unleash your powers** to overcome an obstacle, reshape your environment, or extend your senses, roll + Freak. On a hit, you do it. On a 7-9, mark a condition or the GM will tell you how the effect is unstable or temporary."
   },
   "comfort or support": {
     "name": "Comfort or Support",
     "type": "Active",
-    "playbook": null,
-    "text": "When you comfort or support someone, roll + Mundane. On a hit, they hear you: they mark potential, clear a condition, or shift Labels if they open up to you. On a 10+, you can also add a Team to the pool or clear a condition yourself."
+    "source": "Basic Moves",
+    "text": "When you **comfort or support someone**, roll + Mundane. On a hit, they hear you: they mark potential, clear a condition, or shift Labels if they open up to you. On a 10+, you can also add a Team to the pool or clear a condition yourself."
+  },
+  "pierce the mask": {
+    "name": "Pierce The Mask",
+    "type": "Active",
+    "source": "Basic Moves",
+    "text": "When you **pierce someone's mask** to see the person beneath, roll +Mundane. On a 10+, ask three. On a 7-9, ask one.\n- what are you really planning?\n- what do you want me to do?\n- how could I get your character to____?\n- how could I gain influence over you?"
+  },
+  "defend": {
+    "name": "Defend",
+    "type": "Active",
+    "source": "Basic Moves",
+    "text": "When you **defend someone or something** from an immediate threat, roll + Savior. For NPC threats: on a hit, you keep them safe and choose one. On a 7-9, it costs you: expose yourself to danger or escalate the situation.\n- add a Team to the pool\n- take Influence over someone you protect\n- clear a condition\nFor PC threats: on a hit, give them -2 to their roll. On a 7-9, you expose yourself to cost, retribution, or judgment."
+  },
+  "assess the situation": {
+    "name": "Assess the Situation",
+    "type": "Active",
+    "source": "Basic Moves",
+    "text": "When you **assess the situation**, roll + Superior. On a 10+, ask two. On a 7-9, ask one. Take +1 while acting on the answers.\n- what here can I use to ________?\n- what here is the biggest threat?\n- what here is in the greatest danger?\n- who here is most vulnerable to me?\n- how could we best end this quickly?"
+  },
+  "provoke someone": {
+    "name": "Provoke Someone",
+    "type": "Active",
+    "source": "Basic Moves",
+    "text": "When you **provoke someone** susceptible to your words, say what you’re trying to get them to do and roll + Superior. For NPCs: on a 10+, they rise to the bait and do what you want. On a 7-9, they can instead choose one.\n- they stumble: you take +1 forward against them\n- they err: you gain a critical opportunity\n- they overreact: you gain Influence over them\nFor PCs: On a 10+, both. On a 7-9, choose one.\n- if they do it, add a Team to the pool\n- if they don’t do it, they mark a condition"
+  },
+  "take a powerful blow": {
+    "name": "Take a Powerful Blow",
+    "type": "Active",
+    "source": "Basic Moves",
+    "text": "When you **take a powerful blow**, roll + conditions marked. On a 10+, choose one.\n- you must remove yourself from the situation: flee, pass out, etc.\n- you lose control of yourself or your powers in a terrible way\n- two options from the 7-9 list\nOn a 7-9, choose one.\n- you lash out verbally: provoke a teammate to foolhardy action or take advantage of your Influence to inflict a condition\n- you give ground; your opposition gets an opportunity\n- you struggle past the pain; mark two conditions \nOn a miss, you stand strong. Mark potential as normal, and say how you weather the blow."
+  },
+  "wield your powers": {
+    "name": "Wield Your Powers",
+    "type": "Active",
+    "source": "Adult Moves",
+    "text": "When you **wield your powers** with precision or grace, roll + Freak. On a hit, choose one. On a 10+, choose two.\n- take hold of something vulnerable to you\n- create something useful from your environment\n- neutralize an opponent or threat, at least for now"
+  },
+  "overwhelm a vulnerable foe": {
+    "name": "Overwhelm a Vulnerable Foe",
+    "type": "Active",
+    "source": "Adult Moves",
+    "text": "When you **overwhelm a vulnerable foe**, roll + Danger. On a hit, the fight’s over. They’re done. On a 10+, choose one. On a 7-9, choose two.\n- you take a powerful blow in turn\n- you hurt your foe more than you intended\n- you cause serious collateral damage"
+  },
+  "persuade with best interests": {
+    "name": "Persuade With Best Interests",
+    "type": "Active",
+    "source": "Adult Moves",
+    "text": "When you **persuade someone with their best interests**, roll + Superior. If they’re an NPC, on a 10+, they buy it and act accordingly. On a 7-9, they need concrete assurance, right now.\nIf they’re a PC, on a hit, they can mark potential or shift their own Labels if they do what you want. On a 10+, take Influence over them as well."
+  },
+  "empathize": {
+    "name": "Empathize",
+    "type": "Active",
+    "source": "Adult Moves",
+    "text": "When you openly empathize with someone, roll +Mundane. On a hit, they must reveal a vulnerability or mark a condition. On a 10+, take Influence over them as well."
+  },
+  "stand up for something": {
+    "name": "Stand Up for Something",
+    "type": "Active",
+    "source": "Adult Moves",
+    "text": "When you **stand up for something**, roll + Savior. On a 10+, choose two. On a 7-9, choose one.\n- listeners can’t keep doing what they’re doing\n- listeners can’t flee without addressing you\n- listeners can’t attack you without losing status or position"
+  },
+  "start of session": {
+    "name": "Start of Session",
+    "type": "Passive",
+    "source": "Peripheral Moves",
+    "text": "At the start of every session, the GM adds a Team to the pool."
+  },
+  "end of session": {
+    "name": "End of Session",
+    "type": "Passive",
+    "source": "Peripheral Moves",
+    "text": "At the end of every session, choose one:\n- **Grow closer to the team.** Explain who made you feel welcome; give Influence to that character and clear a condition or mark potential.\n- **Grow into your own image of yourself.** Explain how you see yourself and why; shift one Label up and another down.\n- **Grow away from the team.** Explain why you feel detached. Take Influence over you away from another character."
+  },
+  "team mechanics": {
+    "name": "Team Mechanics",
+    "type": "Passive",
+    "source": "Peripheral Moves",
+    "text": "When you **enter battle against a dangerous foe as a team**, add two to the Team pool.\n- If the leader has Influence over every teammate, add another Team.\n- If everyone has the same purpose in the fight, add another Team.\n- If any team member mistrusts the leader or the team, remove a Team.\n- If your team is ill-prepared or offbalance, remove a Team.\nThe leader of the team can mark a condition to avoid removing a Team from the pool.\nAnyone working with the team can spend Team one for one to help a teammate; give them +1 to their roll.\n Team members can also spend Team to act selfishly. When you act selfishly, say how your actions ignoreor insult your teammates, remove one Team from the pool, and shift one Label up and one Label down, your choice. You can use this option after rolling to alter the Label you’re rolling with.\n Whenever time passes, the GM will empty the Team pool and restore it to one Team."
+  },
+  "conditions": {
+    "name": "Conditions",
+    "type": "Passive",
+    "source": "Peripheral Moves",
+    "text": "When a move tells you to mark a condition, mark any condition you choose. Sometimes the GM may tell you a specific condition to mark, especially after a hard move.\n  If you need to mark a condition and have no more conditions to mark, you are taken out. You lose consciousness or flee. The GM will tell you when you come back into another scene. You may clear one condition.\n  Once a condition is marked, take -2 to certain moves (max -3).\n- If you’re Angry, take -2 to **comfort or support someone** or **pierce the mask**.\n- If you’re Afraid, take -2 to **directly engage**.\n- If you’re Guilty, take -2 to **provoke someone** or **assess the situation**.\n- If you’re Hopeless, take -2 to **unleash your powers**.\n- If you’re Insecure, take -2 to stand in defense or **reject what others say about you or the world**."
+  },
+  "clearing conditions": {
+    "name": "Clearing Conditions",
+    "type": "Passive",
+    "source": "Peripheral Moves",
+    "text": "You can always clear a condition by taking a certain action. At the end of any scene in which you take the corresponding action, clear that condition.\n- **To clear Angry**, hurt someone or break something important.\n- **To clear Afraid**, run from something difficult.\n- **To clear Guilty**, make a sacrifice to absolve your guilt.\n- **To clear Hopeless**, fling yourself into easy relief.\n- **To clear Insecure**, take foolhardy action without talking to your team.\nYou can also clear a condition when someone else comforts or supports you, or when you defend someone"
+  },
+  "shifting labels": {
+    "name": "Shifting Labels",
+    "type": "Passive",
+    "source": "Peripheral Moves",
+    "text": "When you shift a Label, it means that your view of yourself is changing. You see yourself more as the Label you shift up, less as the Label you shift down. If you ever need to shift a Label above +3 or below -2 mark a condition instead, GM’s choice."
+  },
+  "influence": {
+    "name": "Influence",
+    "type": "Passive",
+    "source": "Peripheral Moves",
+    "text": "When someone has Influence over you, it means you care about what they do, say, or think. At any time you can give Influence to any character who doesn’t have Influence over you. All adults have Influence over you when first introduced.\n\nWhen you **have Influence over someone**, take +1 to all moves targeting them, including rejecting their Influence.\n\nWhen you **take advantage of your Influence over someone**, surrender the Influence you hold over them to choose one:\n- give them -2 on a move they just made (after the roll)\n inflict a condition on them\n take an additional +1 on a move targeting them (after the roll)\n\nWhen **someone with Influence over you tells you who you are or how the world works**, accept what they say or reject their Influence. If you accept what they say, the GM will adjust your Labels accordingly; if you want to keep your Labels as they are, you must reject their Influence.\nWhen you reject someone’s Influence, roll. On a hit, you successfully hold to yourself and tune them out.\nOn a 10+, choose two. On a 7-9, choose one.\n- clear a condition or mark potential by immediately acting to prove them wrong\n shift one Label up and one Label down, your choice\n- cancel their Influence and take +1 forward against them\nOn a miss, their words hit you hard. Mark a condition, and the GM will adjust your Labels.\n\nIf you **have Influence over a teammate and you would gain Influence over them again**, immediately shift one of their Labels up and one of their Labels down, your choice. If you **have Influence over an NPC and you would gain Influence over them again**, take +1 forward against them."
+  },
+  "moment of truth": {
+    "name": "Moment of Truth",
+    "type": "Active",
+    "source": "Peripheral Moves",
+    "text": "When you **unlock your Moment of Truth**, you can activate it at any time: read your Moment of Truth out loud from the back of your playbook and follow that script. In essence, you (the player) take full control of the narrative in this moment. The GM will let you know what consequences arise...\n**After you use your Moment of Truth**, permanently lock one Label. You have changed, and some part of you has become set in stone. You can unlock your Moment of Truth a second time through advancements. "
+  },
+  "advancements": {
+    "name": "Advancements",
+    "type": "Passive",
+    "source": "Peripheral Moves",
+    "text": "When someone permanently loses Influence over you,it means that character can never hold Influenceover you again. This is almost always best used on an NPC, to indicate that you have moved past them and won’t be affected by what you think of them again.\nWhen you **retire from the life**, it means you’re not part of the superpowered world anymore, and that character should be considered safe and off-limits to the GM’s moves.\nWhen you **lock a Label**, it means that Label can never shift up or down again—that part of yourself is set in stone.\nWhen you **become a paragon of the city**, it means you’re no longer a “young” hero—you’re a peer of the biggest heroes in the city, and you aren’t a Masks character anymore. The GM should treat your character as one of the biggest heroes in the city, but play them as an NPC."
+  },
+  "making ammends": {
+    "name": "Making Ammends",
+    "type": "Passive",
+    "source": "Innocent Moves",
+    "text": "When you make yourself vulnerable while **comforting or supporting** someone you (or your future self) has fought or hurt, take +2 to the roll. If you miss or they refuse to open up, mark a condition and take a powerful blow."
+  },
+  "growing into power": {
+    "name": "Growing Into Power",
+    "type": "Passive",
+    "source": "Innocent Moves",
+    "text": "When you **unleash your powers** to do something your future self can do, mark a condition to roll + Savior instead of + Freak."
+  },
+  "see it their way": {
+    "name": "See it their Way",
+    "type": "Passive",
+    "source": "Innocent Moves",
+    "text": "When you **reject someone’s Influence** when they equate you with your future self, roll + Savior instead of + nothing. When you accept someone’s Influence when they equate you with your future self, mark potential."
+  },
+  "whats this thing": {
+    "name": "What's this thing?",
+    "type": "Active",
+    "source": "Innocent Moves",
+    "text": " When you ask for someone else’s guidance on the modern world, they must tell you what they think you should do or how you should act. If you act that way, clear a condition and shift Mundane up and any other Label down. If you act that way and it goes poorly, mark potential."
+  },
+  "white knight": {
+    "name": "White Knight",
+    "type": "Passive",
+    "source": "Innocent Moves",
+    "text": "When you give a speech on morality and heroism, you can **provoke someone** with Savior instead of Superior."
+  },
+  "martyr": {
+    "name": "Martyr",
+    "type": "Passive",
+    "source": "Ipsum Moves",
+    "text": "When you **take a powerful blow** while defending someone or something, you may shift Savior up and any other Label down."
+  },
+  "coldly dismiss someone": {
+    "name": "Coldly Dismiss Someone",
+    "type": "Active",
+    "source": "Future Self Replacements",
+    "text": "When you **coldly dismiss someone**, roll + Mundane. On a hit, they mark a condition or leave you alone, their choice. On a 7-9, they can also choose to inflict a condition on you."
+  },
+  "dummy": {
+    "name": "aggressively defend",
+    "type": "Aggressively Defend a Large Group or Area",
+    "source": "Future Self Replacements",
+    "text": "When you **aggressively defend a large group or area**, roll + Savior. On a hit, you create an opportunity for yourself to press the attack, and take +1 forward to pursue it. On a"
+  },
+  "dummy": {
+    "name": "threaten someone",
+    "type": "Threaten Someone",
+    "source": "Future Self Replacements",
+    "text": "When you **threaten someone**, say what you want them to do and roll + Superior. On a hit, they either do it or they are put at a significant disadvantage against you, their choice. On a 10+, either way they mark a condition, your choice."
+  },
+  "spit in the face of guidance": {
+    "name": "Spit in the Face of Guidance or Influence",
+    "type": "Lorem",
+    "source": "Future Self Replacements",
+    "text": "When you **spit in the face of guidance or Influence**, roll + 2. On a hit, take away their Influence over you or clear a condition, your choice. On a 7-9, you both take a powerful blow from the intensity of your words"
+  },
+  "not from around here": {
+    "name": "Not From Around Here",
+    "type": "Active",
+    "source": "Newborn Moves",
+    "text": "When you act clueless, goofy, or confused to get out of a sticky mundane situation, roll + Freak. On a hit, you create an opportunity, a distraction, or a plausible excuse. On a 7-9, you also feel all the weight of playing the clown and of the people staring at you. The GM shifts one of your Labels up and one down. On a miss, no one is fooled, and you’ve put yourself in their crosshairs."
+  },
+  "thermodynamic miracle": {
+    "name": "Thermodynamic Miracle",
+    "type": "Passive",
+    "source": "Innocent Moves",
+    "text": "When you **comfort or support** someone by telling them what makes them unique, roll + Freak instead of Mundane. If they open up to you, shift Freak up and Mundane down. If they don’t, mark a condition."
+  },
+  "a mind of their own": {
+    "name": "A Mind of their Own",
+    "type": "Active",
+    "source": "Newborn Moves",
+    "text": "Your powers evolve and mutate. When you are facing an obstacle or threat that your powers would not be able to deal with, you can mark a condition to gain brand new abilities adapted to the situation. You lose these new powers once the danger is gone."
+  },
+  "damage": {
+    "name": "Damage",
+    "type": "Passive",
+    "source": "Newborn Moves",
+    "text": "You get an additional condition called Damaged. While marked, take +1 to **take a powerful blow**.\n\nTo clear the Damaged condition, you need time, external help, or special equipment or abilities."
+  },
+  "regeneration": {
+    "name": "Regeneration",
+    "type": "Active",
+    "source": "Newborn Moves",
+    "text": "on: When you’re taken out, you can trigger an emergency regeneration process. If you do, your body undergoes an unpredictable transformation, and in mere moments, you’re back on your feet and ready to fight. Clear three conditions and choose three from the list below:\n- Change your gender identity or presentation\n- Change your physical appearance\n- Forget all your lessons\n- Lose an important memory of a teammate; they lose Influence over you\n- Swap an ability with another one from the Newborn playbook"
+  },
+  "what the hell hero": {
+    "name": "What the Hell, Hero",
+    "type": "Active",
+    "source": "Reformed Moves",
+    "text": "When you call out an injustice that a hero has perpetrated, roll + Danger. On a hit, take Influence over them. On a 7-9, choose one. On a 10+, choose two.\n- You get them to admit their wrongdoing\n- You win over an onlooker; take Influence over them\n- You don’t turn their attention and anger onto yourself\nOn a miss, they dismiss you; mark a condition (their choice), shift Danger up, Savior down."
+  },
+  "wrong side of the tracks": {
+    "name": "Wrong Side of the Tracks",
+    "type": "Passive",
+    "source": "Reformed Moves",
+    "text": " You always get to ask an additional question when you p**ierce the mask of a villain**, even on a miss. When you pierce the mask of a hero (your call), add this question to the list:\n- what was your darkest moment?"
+  },
+  "not so different": {
+    "name": "Not So Different",
+    "type": "Passive",
+    "source": "Reformed Moves",
+    "text": "When you **provoke someone** to criminal or villainous action, you can use Danger instead of Superior"
+  },
+  "blowing off steam": {
+    "name": "Blowing Off Steam",
+    "type": "Active",
+    "source": "Reformed Moves",
+    "text": "When you commit a misdemeanor or small “victimless” crime, you may clear a condition of your choice."
+  },
+  "dark past": {
+    "name": "Dark Past",
+    "type": "Active",
+    "source": "Reformed Moves",
+    "text": "When you confess to a serious crime you committed as a villain while in the presence of someone involved, shift Danger up and any other Label down, say what you did, and choose one.\n- No one was hurt badly by the crime\n- You aren’t in legal danger from the crime\n- You aren’t being actively pursued for extralegal retribution"
+  },
+  "do me a favor": {
+    "name": "Do me a Favor",
+    "type": "Active",
+    "source": "Reformed Moves",
+    "text": "When you go to an ordinary civilian you know for a favor, roll +Mundane. On a 10+, they’ll lend you a hand. On a 7-9, they need a promise up front. On a miss, you catch them up in your superpowered nonsense, and they suffer for it"
+  },
+  "the gossip mags": {
+    "name": "The Gossip Mags",
+    "type": "Active",
+    "source": "Star Moves",
+    "text": " When you tap into the gossip and rumor of the celebrity industry for information on an important city figure, roll + Superior. On a hit, you can ask the GM questions. On a 10+, ask three. On a 7-9, ask one:\n- What are they up to?\n- What or who do they most care about?\n- What allies do they have? Enemies?\n- Where and when can I find them?\n- How could I make them vulnerable to me?\nOn a miss, ask one anyway,  but they hear about your interest in them."
+  },
+  "stage fighting": {
+    "name": "Stage-Fighting",
+    "type": "Passive",
+    "source": "Star Moves",
+    "text": "When you directly engage a threat with an audience watching, mark a condition to roll +Superior instead of Danger."
+  },
+  "time for the show": {
+    "name": "Time for the Show",
+    "type": "Active",
+    "source": "Star Moves",
+    "text": "When you put on a flamboyant display of your powers, roll +Superior. On a 7-9, name one NPC present. On a 10+, name two NPCs present. The named NPCs must either volunteer help or information, express admiration, or ask for your help, GM’s choice. On a miss, your display catches someone watching in the wrong way."
+  },
+  "take it from me": {
+    "name": "Take it from Me",
+    "type": "Passive",
+    "source": "Star Moves",
+    "text": " When you **comfort or support** someone who openly admires your celebrity persona, roll +Superior instead of Mundane."
+  },
+  "cold and cruel": {
+    "name": "Cold and Cruel",
+    "type": "Active",
+    "source": "Star Moves",
+    "text": "When you shut someone down, roll +Superior. On a 10+, you either inflict a condition on them, make them lose Influence over you, or take Influence over them, your choice. On a 7-9, you either each inflict a condition on the other, or both lose Influence over each other, your choice. On a miss, they gain Influence over you"
+  },
+  "stick to the mission": {
+    "name": "Stick To The Mission",
+    "type": "Passive",
+    "source": "Harbinger Moves",
+    "text": "When you **defend someone** or something critically important to the future (tell us why), you may mark a condition to shift down one Label and shift up Savior before the roll. If you do, you cannot choose the option ‘clear a condition’ for the defend move."
+  },
+  "tomorrows golden promise": {
+    "name": "Tomorrow’s Golden Promise",
+    "type": "Passive",
+    "source": "Harbinger Moves",
+    "text": "When you **comfort or support someone** with tales of what you think their future will be, you may roll + Savior instead of + Mundane. Mark a condition unless you are confident the stories are true."
+  },
+  "applied history": {
+    "name": "Applied History",
+    "type": "Passive",
+    "source": "Harbinger Moves",
+    "text": "When you **pierce the mask** of someone you believe will shape the future, roll + Savior instead of + Mundane."
+  },
+
+  "you haven’t learned you can do that yet": {
+    "name": "You Haven’t Learned You Can Do That Yet",
+    "type": "Passive",
+    "source": "Harbinger Moves",
+    "text": "When you tell a teammate about a new, never-before-performed trick that they’ve never considered, spend a Team from the pool to allow them to **unleash their powers**, **directly engage a threat**, or **defend someone** using Superior as if it was their Label. Any costs or complications from their move affect you, as well."
+  },
+
+ "i learned the solution in grade school": {
+    "name": "I Learned The Solution In Grade School",
+    "type": "Passive",
+    "source": "Harbinger Moves",
+    "text": "When you **unleash your powers** to extend your senses or overcome an intellectual obstacle, you may roll + Superior instead of + Freak."
+  },
+
+  "21st century studies": {
+    "name": "21st Century Studies",
+    "type": "Passive",
+    "source": "Harbinger Moves",
+    "text": "When you **assess the situation**, you may always ask ‘what does the future know about this moment?’, even on a miss. You take +1 ongoing to act on the answers."
+  },
+
+  "no good at being a kid": {
+    "name": "No Good At Being A Kid",
+    "type": "Passive",
+    "source": "Nomad Moves",
+    "text": "When you clear a condition, you can shift Labels, your choice."
+  },
+  "watched c beams glitter": {
+    "name": "Watched C-Beams Glitter",
+    "type": "Active",
+    "source": "Nomad Moves",
+    "text": "When you make a claim about a strange situation or phenomenon based on your experience, roll + Freak. On a hit, you were right; the GM will tell you what opportunity your knowledge grants to you. On a 7-9, your claim is incomplete, flawed, or tangential; the GM will tell you how. On a miss, your experiences are incomplete; the GM will tell you what mistake your flawed understanding leads you to make."
+  },
+  "i hate calling the cavalry": {
+    "name": "I Hate Calling The Cavalry",
+    "type": "Active",
+    "source": "Nomad Moves",
+    "text": "When you call the allies you made beyond this world to ask them for help, mark a condition and roll + Superior. On a hit, someone shows up to lend you a hand. On a 7-9, they’re dragging their own problems. On a miss, your call reaches someone you wish it hadn’t."
+  },
+  "the littlest space bandit": {
+    "name": "The Littlest Space Bandit",
+    "type": "Passive",
+    "source": "Nomad Moves",
+    "text": "When you **directly engage a threat** that underestimates you, roll + Superior instead of + Danger."
+  },
+  "out of this world": {
+    "name": "Out Of This World",
+    "type": "Active",
+    "source": "Nomad Moves",
+    "text": "When you plug into the cosmic aether and tune out of this world, roll + Freak. On a hit, you come to a new, interesting insight about your current problems and situation; the GM will tell you what. On a 10+, you can also shift your own Labels accordingly to match your new understanding. On a miss, you realize something dangerous or terrible; the GM will tell you what, and shift your Labels accordingly."
+  },
+  "sharpened eyes": {
+    "name": "Sharpened Eyes",
+    "type": "Passive",
+    "source": "Nomad Moves",
+    "text": "When you **assess the situation**, you may always ask one of the following questions, even on a miss:\n- What’s my best way out/past/in?\n- What here would be handy to grab?\n- Who here is susceptible to my words?"
+  },
+  "ill show them": {
+    "name": "I’ll Show Them",
+    "type": "Passive",
+    "source": "Scion Moves",
+    "text": "When you **defend someone** who doesn’t believe in you, you can always take Influence over them, even on a miss."
+  },
+
+  "changed sides": {
+    "name": "Changed Sides",
+    "type": "Active",
+    "source": "Scion Moves",
+    "text": "When you mislead or trick an enemy by pretending to be on their side, roll + Danger. On a hit, they buy your charade for now. On a 7-9, choose 1. On a 10+, choose 2.\n- You avoid having to provide concrete evidence\n- You create an opportunity\n- You expose a weakness or flaw\nOn a miss, someone else watching comes to the worst possible conclusion and acts on it."
+  },
+
+  "they dont deserve forgiveness": {
+    "name": "They Don’t Deserve Forgiveness",
+    "type": "Passive",
+    "source": "Scion Moves",
+    "text": "When you accuse an enemy of being irredeemable, you can mark two conditions to take Influence over you away from them. When you **directly engage** someone who has no Influence over you, you can always choose 1 additional option, even on a miss."
+  },
+  "moldable": {
+    "name": "Moldable",
+    "type": "Passive",
+    "source": "Scion Moves",
+    "text": "When you **pierce the mask** of someone whose respect you crave, you can always ask ‘How could I gain Influence over you?’, even on a miss. Take +1 ongoing to acting on the answer."
+  },
+ "all the best stuff": {
+    "name": "All The Best Stuff",
+    "type": "Active",
+    "source": "Scion Moves",
+    "text": "You’ve compiled access to caches of equipment and weaponry other supers have hidden in the city. When you access a cache, say whose cache it is. If it’s a hero’s, roll + Savior. If it’s a villain’s, roll + Danger. On a hit, you find a tool or intel useful to your situation; the GM will detail. On a 7-9, you leave evidence that you’ve been here. On a miss, you tripped an alarm and they’re coming; prepare to explain yourself."
+  },
+  "white lies": {
+    "name": "White Lies",
+    "type": "Passive",
+    "source": "Scion Moves",
+    "text": "When you **comfort or support** someone by telling them lies they want to hear, roll + Savior instead of + Mundane. On a hit, if they open up to you, take Influence over them."
   }
 }
-
 
