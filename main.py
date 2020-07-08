@@ -8,19 +8,21 @@ from dotenv import load_dotenv
 import gspread
 from terminaltables import AsciiTable
 
-load_dotenv()
-token = os.getenv('DISCORD_SECRET')
+import config as cfg
 
-with open('moves.json') as f:
+load_dotenv()
+token = os.getenv(cfg.files['guild_env'])
+
+with open(cfg.files['moves']) as f:
   moves = json.load(f)
 
-gc = gspread.service_account('client_secret.json')
-player_info = gc.open('Big Team Roster and Playbook Totals')
+gc = gspread.service_account(cfg.files['service_auth'])
+player_info = gc.open(cfg.external['roster'])
 roster = player_info.get_worksheet(0)
 pb_totals = player_info.get_worksheet(1)
 
-bot = commands.Bot(command_prefix='gaia!')
-act = discord.Game(name="Big Team | gaia!")
+bot = commands.Bot(command_prefix=cfg.prefix)
+act = discord.Game(name="Big Team | {}".format(cfg.prefix))
 
 @bot.listen()
 async def on_ready():
@@ -59,7 +61,7 @@ async def search(ctx, *, arg):
                 matches.append(move)
         if not matches:
             response = 'My apologies, I could not find any moves containing *{}*'.format(arg)
-        elif len(matches) > 25:
+        elif len(matches) > max_results:
             response = 'Oh my! That returned quite a few results... You should try making your search a bit more specific ^w^'
         else:
             response = 'A search of my databases has found the following moves containing {}:\n```'.format(arg)
@@ -115,7 +117,7 @@ async def totals(ctx):
         
 @bot.command(description='Displays a link to the Masks West Marches Wiki', brief='Show wiki link')
 async def wiki(ctx):
-    response = 'Here is a link to the wiki page! https://masks-west-marches.fandom.com/wiki/Masks_West_Marches_Wiki'
+    response = 'Here is a link to the wiki page! {}'.format(cfg.external['wiki'])
     await ctx.send(response)
     
 @bot.command(description='Displays a list of useful links for participating in the Masks Big Team', brief='List useful player links')
@@ -163,7 +165,7 @@ async def pronouns(ctx):
     
 @bot.command(hidden=True)
 async def dangerroom(ctx):
-    with open('danger_room.txt', 'r') as encounters:
+    with open(cfg.files['encounters'], 'r') as encounters:
         all_encounters = encounters.readlines()
         selection = random.choice(all_encounters)
         response = 'Welcome to the danger room! Projecting {} for you to fight'.format(selection.rstrip('\n'))
@@ -201,7 +203,7 @@ async def gremlin(ctx):
     
 @bot.command(hidden=True)
 async def tadd(ctx):
-    response = 'No matter what Melchior says, Tadd is **NOT** allowed in the base.
+    response = 'No matter what Melchior says, Tadd is **NOT** allowed in the base.'
     await ctx.send(response)
     
 @bot.command(hidden=True)
