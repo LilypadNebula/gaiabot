@@ -4,11 +4,16 @@ import json
 import os
 
 from dotenv import load_dotenv
+import gspread
+
 load_dotenv()
 token = os.getenv('DISCORD_SECRET')
 
 with open('moves.json') as f:
   moves = json.load(f)
+
+gc = gspread.service_account('client_secret.json')
+sh = gc.open('Big Team Roster and Playbook Totals').sheet1
 
 bot = commands.Bot(command_prefix='gaia!')
 
@@ -57,7 +62,7 @@ async def search(ctx, *, arg):
     
 @bot.command(name="list")
 async def _list(ctx, *, arg): 
-    if arg == '' or arg not in list(moves_by_source):
+    if arg not in list(moves_by_source):
         response = 'I can display moves from any of the following categories:\n'
         response = response + ', '.join(list(moves_by_source))
         await ctx.send(response)
@@ -84,6 +89,30 @@ async def elle(ctx):
 @bot.command()
 async def pronouns(ctx): 
     response = 'I use they/them pronouns. I appreciate you asking!'
+    await ctx.send(response)
+    
+@bot.command()
+async def bigteam(ctx): 
+    response = 'The following is a list of active members of the Big Team. I care about them very much:\n'
+    active = []
+    hero_names = sh.col_values(1)
+    activity = sh.col_values(7)
+    for index, hero in enumerate(hero_names):
+        if hero and activity[index] in ['Active', 'GM Character']:
+            active.append(hero)
+    response = response + ', '.join(active)
+    await ctx.send(response)
+    
+@bot.command()
+async def gms(ctx):
+    response = 'Probability indicates the following to be what are known as "Game Masters" to those in other universes:\n'
+    gm = []
+    player_names = sh.col_values(4)
+    activity = sh.col_values(7)
+    for index, player in enumerate(player_names):
+        if player and activity[index] == 'GM Character':
+            gm.append(player)
+    response = response + ', '.join(gm)
     await ctx.send(response)
 
 def sorted_by_source(moves):
