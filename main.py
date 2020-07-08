@@ -3,6 +3,7 @@ from discord.ext import commands
 import json
 import os
 import random
+import google.oauth2.service_account as sa
 
 from dotenv import load_dotenv
 import gspread
@@ -16,7 +17,15 @@ token = os.getenv(cfg.files['guild_env'])
 with open(cfg.files['moves']) as f:
   moves = json.load(f)
 
-gc = gspread.service_account(cfg.files['service_auth'])
+json_creds = os.getenv(cfg.files['service_auth'])
+
+creds_dict = json.loads(json_creds)
+creds_dict["private_key"] = creds_dict["private_key"].replace("\\\\n", "\n")
+creds = sa.Credentials.from_service_account_info(creds_dict, scopes = [
+    'https://www.googleapis.com/auth/spreadsheets',
+    'https://www.googleapis.com/auth/drive'
+])
+gc = gspread.authorize(creds)
 player_info = gc.open(cfg.external['roster'])
 roster = player_info.get_worksheet(0)
 pb_totals = player_info.get_worksheet(1)
@@ -61,7 +70,7 @@ async def search(ctx, *, arg):
                 matches.append(move)
         if not matches:
             response = 'My apologies, I could not find any moves containing *{}*'.format(arg)
-        elif len(matches) > max_results:
+        elif len(matches) > cfg.max_results:
             response = 'Oh my! That returned quite a few results... You should try making your search a bit more specific ^w^'
         else:
             response = 'A search of my databases has found the following moves containing {}:\n```'.format(arg)

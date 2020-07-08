@@ -9,6 +9,9 @@ pylint = "*"
 [packages]
 "discord.py" = "*"
 python-dotenv = "*"
+gspread = "*"
+terminaltables = "*"
+google-auth = "*"
 
 [requires]
 python_version = "3.8"

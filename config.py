@@ -1,4 +1,4 @@
-files = {'service_auth': 'client_secret.json',
+files = {'service_auth': 'GOOGLE_SERVICE_ACCOUNT',
          'guild_env': 'DISCORD_SECRET',
          'moves': 'moves.json',
          'encounters': 'danger_room.txt'}
