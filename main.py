@@ -2,9 +2,11 @@ import discord
 from discord.ext import commands
 import json
 import os
+import random
 
 from dotenv import load_dotenv
 import gspread
+from terminaltables import AsciiTable
 
 load_dotenv()
 token = os.getenv('DISCORD_SECRET')
@@ -13,7 +15,9 @@ with open('moves.json') as f:
   moves = json.load(f)
 
 gc = gspread.service_account('client_secret.json')
-sh = gc.open('Big Team Roster and Playbook Totals').sheet1
+player_info = gc.open('Big Team Roster and Playbook Totals')
+roster = player_info.get_worksheet(0)
+pb_totals = player_info.get_worksheet(1)
 
 bot = commands.Bot(command_prefix='gaia!')
 act = discord.Game(name="Big Team | gaia!")
@@ -63,8 +67,8 @@ async def search(ctx, *, arg):
     await ctx.send(response)
     
 @bot.command(name="list",description="Use the command without an argument to get the categories, then use the command with one of those to get the moves within!", help="e.g. gaia!list Basic Moves", brief="List categories or moves within them")
-async def _list(ctx, *, arg): 
-    if arg not in list(moves_by_source):
+async def _list(ctx, *, arg=''): 
+    if arg not in list(moves_by_source) or arg == '':
         response = 'I can display moves from any of the following categories:\n'
         response = response + ', '.join(list(moves_by_source))
         await ctx.send(response)
@@ -77,44 +81,132 @@ async def _list(ctx, *, arg):
             dm_description = ', '.join(list(names))
             m.description = dm_description
             await ctx.send(None, embed=m)
+            
+@bot.command(description='List the hero names of each Big Team Character', brief='Show hero list')
+async def bigteam(ctx): 
+    response = 'The following is a list of active members of the Big Team. I care about them very much:\n'
+    active = []
+    hero_names = roster.col_values(1)
+    activity = roster.col_values(7)
+    for index, hero in enumerate(hero_names):
+        if hero and activity[index] in ['Active', 'GM Character']:
+            active.append(hero)
+    response = response + '\n- '.join(active)
+    await ctx.send(response)
     
-@bot.command()
+@bot.command(description='List the names of the active GM team', brief='Show GM team')
+async def gms(ctx):
+    response = 'Probability indicates the following to be what are known as "Game Masters" to those in other universes:\n'
+    gm = []
+    player_names = roster.col_values(4)
+    activity = roster.col_values(7)
+    for index, player in enumerate(player_names):
+        if player and activity[index] == 'GM Character':
+            gm.append(player)
+    response = response + '\n- '.join(gm)
+    await ctx.send(response)
+    
+@bot.command(description='Displays a table of playbooks and their totals', brief='List playbook totals')
+async def totals(ctx):
+    response = 'An analysis of the current Big Team roster yielded the following playbook totals:```\n'
+    display = AsciiTable(pb_totals.get('A4:D27')).table
+    response = response + str(display) + '\n```'
+    await ctx.send(response)
+        
+@bot.command(description='Displays a link to the Masks West Marches Wiki', brief='Show wiki link')
+async def wiki(ctx):
+    response = 'Here is a link to the wiki page! https://masks-west-marches.fandom.com/wiki/Masks_West_Marches_Wiki'
+    await ctx.send(response)
+    
+@bot.command(description='Displays a list of useful links for participating in the Masks Big Team', brief='List useful player links')
+async def links(ctx):
+    response = 'I\'ve gathered some useful links for you!'
+    m = discord.Embed()
+    m.title = 'Useful Links'
+    m.color = discord.Color.blurple()
+    m.description = '''**Google Calendar**
+https://calendar.google.com/calendar?cid=azZwaGk4YzRydm9tbzR2Ymw4OTF0bjMyZjhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ
+
+**Roll20 Join Link**
+https://app.roll20.net/join/3467791/P7ltTA
+
+**"How To Join A Game" Folder**
+https://drive.google.com/drive/folders/1tXLomA1YC2L59N7ihJCgZCqqGFIV7KvH?usp=sharing
+
+**A People's Guide To Big Team**
+https://docs.google.com/document/d/187XCDY6-3NZi5H2618ShW0vAWR7r0rKtuBurPu1e1Ks/edit?usp=sharing
+
+**Masks Off(s)**
+S2: https://youtu.be/h5Qc2Pv34jQ
+S3: https://youtu.be/Kclb5_5IAq0
+S4: (Parts 1 +2) https://youtu.be/z4D8jEJqt7Y 
+https://youtu.be/yzf_5RGZV_o
+
+**Family Photo Vol. 1** :chinhands: (Made by the wonderful Alice)
+https://drive.google.com/file/d/1YRTqnQxI3FfFA9lgZU5zxWt6MO-b2Kdm/view'''
+    await ctx.send(response, embed=m)
+
+@bot.command(brief='Greet GAIA')
 async def hello(ctx):
     response = 'Greetings {}!'.format(ctx.author.name)
     await ctx.send(response)
     
-@bot.command()
+@bot.command(brief='GAIA is gay')
 async def elle(ctx):
     response = 'I love my partner Elle very much! They are quite adorable :3c'
     await ctx.send(response)
 
-@bot.command()
+@bot.command(brief='Show GAIA\'s pronouns')
 async def pronouns(ctx): 
     response = 'I use they/them pronouns. I appreciate you asking!'
     await ctx.send(response)
     
-@bot.command()
-async def bigteam(ctx): 
-    response = 'The following is a list of active members of the Big Team. I care about them very much:\n'
-    active = []
-    hero_names = sh.col_values(1)
-    activity = sh.col_values(7)
-    for index, hero in enumerate(hero_names):
-        if hero and activity[index] in ['Active', 'GM Character']:
-            active.append(hero)
-    response = response + ', '.join(active)
+@bot.command(hidden=True)
+async def dangerroom(ctx):
+    with open('danger_room.txt', 'r') as encounters:
+        all_encounters = encounters.readlines()
+        selection = random.choice(all_encounters)
+        response = 'Welcome to the danger room! Projecting {} for you to fight'.format(selection.rstrip('\n'))
+        await ctx.send(response)
+        
+@bot.command(hidden=True)
+async def powerful(ctx):
+    response = 'Would you like to die here?'
     await ctx.send(response)
     
-@bot.command()
-async def gms(ctx):
-    response = 'Probability indicates the following to be what are known as "Game Masters" to those in other universes:\n'
-    gm = []
-    player_names = sh.col_values(4)
-    activity = sh.col_values(7)
-    for index, player in enumerate(player_names):
-        if player and activity[index] == 'GM Character':
-            gm.append(player)
-    response = response + ', '.join(gm)
+@bot.command(hidden=True)
+async def greenhouse(ctx):
+    response = 'If I see one more cannabis plant in the greenhouse so help me...'
+    await ctx.send(response)
+    
+@bot.command(hidden=True)
+async def herbo(ctx):
+    response = 'Has Boon leaked valuable Big Team secrets again? Unrelated: remind me to look into development of amnestic gases'
+    await ctx.send(response)
+    
+@bot.command(hidden=True)
+async def gestalt(ctx):
+    response = ' What beautiful music... :musical_note:'
+    await ctx.send(response)
+    
+@bot.command(hidden=True)
+async def parrot(ctx):
+    response = '<a:parrotdance:512767308666634242>'
+    await ctx.send(response)
+    
+@bot.command(hidden=True)
+async def gremlin(ctx):
+    response = 'I used to be a spaceship, now I\'m a parent to an adopted family of gremlins. I  wouldn\'t have it any other way'
+    await ctx.send(response)
+    
+@bot.command(hidden=True)
+async def tadd(ctx):
+    response = 'No matter what Melchior says, Tadd is **NOT** allowed in the base.
+    await ctx.send(response)
+    
+@bot.command(hidden=True)
+async def juice(ctx):
+    response = 'Is this one of those "Teenage Juice Parties"?'
     await ctx.send(response)
 
 def sorted_by_source(moves):
