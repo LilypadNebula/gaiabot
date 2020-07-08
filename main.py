@@ -49,30 +49,28 @@ async def on_message(message):
                         matches.append(move)
                 if not matches:
                     response = 'My apologies, I could not find any moves containing {}'.format(phrase)
+                elif len(matches) > 25:
+                    response = 'Oh my! That returned quite a few results... You should try making your search a bit more specific ^w^'
                 else:
                     response = 'A search of my databases has found the following moves containing {}:\n```'.format(phrase)
-                    for move_name in matches:
-                        response = response + move_name + ', '
-                    response = response[0:-2]+'```'
+                    response = response + ', '.join(matches) + '```'
             await message.channel.send(response)
             
-        elif command == 'list':
-            if not isinstance(message.channel, discord.DMChannel):
-                pub_response = 'I know many different moves, and it would be impolite to list them here. I will send you a direct message to reduce clutter.'
-                await message.channel.send(pub_response)
-            
-            m = discord.Embed()
-            m.title = 'Moves list'
-            m.color = discord.Color.blurple()
-            dm_text = 'The following is a list of moves stored in my databases:\n'
-            dm_description = ''
-            for move_source, names in moves_by_source.items(): 
-                dm_description = dm_description + '**{}**:\n'.format(move_source)
-                for move_name in names:
-                    dm_description = dm_description + move_name + ', '
-                dm_description = dm_description[0:-2] + '\n'
-            m.description = dm_description
-            await message.author.send(dm_text, embed=m)
+        elif command.startswith('list'):
+            source = command[4:].lstrip()    
+            if source == '' or source not in list(moves_by_source):
+                response = 'I can display moves from any of the following categories:\n'
+                response = response + ', '.join(list(moves_by_source))
+                await message.channel.send(response)
+            else:
+                if source in list(moves_by_source):
+                    names = moves_by_source[source]
+                    m = discord.Embed()
+                    m.title = source
+                    m.color = discord.Color.blurple()
+                    dm_description = ', '.join(list(names))
+                    m.description = dm_description
+                    await message.channel.send(None, embed=m)
             
         elif command == 'hello':
             response = 'Greetings {}!'.format(message.author.name)

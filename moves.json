@@ -1,16 +1,4 @@
 {
-  "dummy": {
-    "name": "Foobar",
-    "type": "Lorem",
-    "source": "Ipsum Moves",
-    "text": "Dolor sit amet"
-  },
-  "straight up creepin": {
-    "name": "Straight Up Creepin'",
-    "type": "Active",
-    "source":"Beacon Moves",
-    "text": "When you scope out a person or place, roll + Mundane. On a 10+, ask two. On a 7-9, ask one. \n- what’s my best way in/out? \n- what happened here recently?\n- what here is worth grabbing?\n- who or what here is not what they seem?\n- whose place is this?\nOn a miss, you find yourself in over your head. The GM will tell you why this is a bad spot."
-  },
   "directly engage a threat": {
     "name": "Directly Engage a Threat",
     "type": "Active",
@@ -182,25 +170,25 @@
   "coldly dismiss someone": {
     "name": "Coldly Dismiss Someone",
     "type": "Active",
-    "source": "Future Self Replacements",
+    "source": "Innocent Moves",
     "text": "When you **coldly dismiss someone**, roll + Mundane. On a hit, they mark a condition or leave you alone, their choice. On a 7-9, they can also choose to inflict a condition on you."
   },
-  "dummy": {
-    "name": "aggressively defend",
-    "type": "Aggressively Defend a Large Group or Area",
-    "source": "Future Self Replacements",
+  "aggressively defend": {
+    "name": "Aggressively Defend a Large Group or Area",
+    "type": "Active",
+    "source": "Innocent Moves",
     "text": "When you **aggressively defend a large group or area**, roll + Savior. On a hit, you create an opportunity for yourself to press the attack, and take +1 forward to pursue it. On a"
   },
-  "dummy": {
-    "name": "threaten someone",
-    "type": "Threaten Someone",
-    "source": "Future Self Replacements",
+  "threaten someone": {
+    "name": "Threaten Someone",
+    "type": "Active",
+    "source": "Innocent Moves",
     "text": "When you **threaten someone**, say what you want them to do and roll + Superior. On a hit, they either do it or they are put at a significant disadvantage against you, their choice. On a 10+, either way they mark a condition, your choice."
   },
   "spit in the face of guidance": {
     "name": "Spit in the Face of Guidance or Influence",
-    "type": "Lorem",
-    "source": "Future Self Replacements",
+    "type": "Active",
+    "source": "Innocent Moves",
     "text": "When you **spit in the face of guidance or Influence**, roll + 2. On a hit, take away their Influence over you or clear a condition, your choice. On a 7-9, you both take a powerful blow from the intensity of your words"
   },
   "not from around here": {
@@ -497,10 +485,16 @@
     "source": "Brain Moves",
     "text": "You have a deep and abiding sense of guilt for something you have created or had a hand in creating. It could have been something you invented when you first came into your genius, or something you set into motion that you no longer have the power to stop. It may even be something beyond your ability to achieve again, this once-in-a-lifetime creation. Just as you are a world-class intellect, your shame is a world-class problem. Whatever the case may be, your role in its creation is not publicly known...yet.\nWhenever you are confronted with your shame, either mark a condition or shift Superior down and Danger up. If your shame is an NPC, they can never lose Influence over you. \nAt the end of every session, answer the question:\n• Did you take steps to make amends for your shame? \nIf the answer is yes, mark potential. If the answer is no, give Influence to one of your teammates."
   },
+  "straight up creepin": {
+    "name": "Straight Up Creepin'",
+    "type": "Active",
+    "source":"Beacon Moves",
+    "text": "When you scope out a person or place, roll + Mundane. On a 10+, ask two. On a 7-9, ask one. \n- what’s my best way in/out? \n- what happened here recently?\n- what here is worth grabbing?\n- who or what here is not what they seem?\n- whose place is this?\nOn a miss, you find yourself in over your head. The GM will tell you why this is a bad spot."
+  },
   "no powers and not nearly enough training": {
     "name": "No powers and not nearly enough training",
     "type": "Passive",
-    "source": "Beacon moves",
+    "source": "Beacon Moves",
     "text": "You’re always picking up new gear to keep yourself in the game. Whenever you pick up a new piece of gear, you can write it in as a new ability if this line is empty. The first time you use each piece of gear to directly engage a threat, unleash your powers, or defend someone, you can roll +Mundane instead of the normal Label."
   },
 
