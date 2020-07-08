@@ -11,10 +11,12 @@ with open('moves.json') as f:
   moves = json.load(f)
 
 bot = commands.Bot(command_prefix='gaia!')
+act = discord.Game(name="Big Team | gaia!")
 
 @bot.listen()
 async def on_ready():
     print('We have logged in as {0.user}'.format(bot))
+    await bot.change_presence(activity=act)
 
 @bot.listen()
 async def on_message(message):
@@ -37,7 +39,7 @@ async def on_message(message):
     
 #TODO: Figure out how to set command prefix per-server
 #TODO: Handle response construction and sending separately?
-@bot.command()
+@bot.command(description="Search for a move, when you find it use [move name] to get details", help="e.g. gaia!search been reading\n[been reading the files]", brief="Search for a move")
 async def search(ctx, *, arg):
     matches = []
     if arg == '':
@@ -55,7 +57,7 @@ async def search(ctx, *, arg):
             response = response + ', '.join(matches) + '```'
     await ctx.send(response)
     
-@bot.command(name="list")
+@bot.command(name="list",description="Use the command without an argument to get the categories, then use the command with one of those to get the moves within!", help="e.g. gaia!list Basic Moves", brief="List categories or moves within them")
 async def _list(ctx, *, arg): 
     if arg == '' or arg not in list(moves_by_source):
         response = 'I can display moves from any of the following categories:\n'
