@@ -1,4 +1,5 @@
 import discord
+from discord.ext import commands
 import json
 import os
 
@@ -9,15 +10,15 @@ token = os.getenv('DISCORD_SECRET')
 with open('moves.json') as f:
   moves = json.load(f)
 
-client = discord.Client()
+bot = commands.Bot(command_prefix='gaia!')
 
-@client.event
+@bot.listen()
 async def on_ready():
-    print('We have logged in as {0.user}'.format(client))
+    print('We have logged in as {0.user}'.format(bot))
 
-@client.event
+@bot.listen()
 async def on_message(message):
-    if message.author == client.user:
+    if message.author == bot.user:
         return
 
     text = message.content
@@ -34,55 +35,56 @@ async def on_message(message):
         m.description = 'Move Type: ' + res['type'] + '\n' + 'Source: ' + res['source'] + '\n' + res['text']
         await message.channel.send(None, embed=m)
     
-    #TODO: Figure out how to set command prefix per-server
-    #TODO: Handle response construction and sending separately?
-    elif  text.startswith('gaia!'):
-        command = text[5:]
-        if command.startswith('search'):
-            matches = []
-            phrase = command[6:].lstrip()
-            if phrase == '':
-                response = 'Please include a valid search term!'
-            else:
-                for move in list(moves):
-                    if phrase in move:
-                        matches.append(move)
-                if not matches:
-                    response = 'My apologies, I could not find any moves containing {}'.format(phrase)
-                elif len(matches) > 25:
-                    response = 'Oh my! That returned quite a few results... You should try making your search a bit more specific ^w^'
-                else:
-                    response = 'A search of my databases has found the following moves containing {}:\n```'.format(phrase)
-                    response = response + ', '.join(matches) + '```'
-            await message.channel.send(response)
-            
-        elif command.startswith('list'):
-            source = command[4:].lstrip()    
-            if source == '' or source not in list(moves_by_source):
-                response = 'I can display moves from any of the following categories:\n'
-                response = response + ', '.join(list(moves_by_source))
-                await message.channel.send(response)
-            else:
-                if source in list(moves_by_source):
-                    names = moves_by_source[source]
-                    m = discord.Embed()
-                    m.title = source
-                    m.color = discord.Color.blurple()
-                    dm_description = ', '.join(list(names))
-                    m.description = dm_description
-                    await message.channel.send(None, embed=m)
-            
-        elif command == 'hello':
-            response = 'Greetings {}!'.format(message.author.name)
-            await message.channel.send(response)
-            
-        elif command =='elle':
-            response = 'I love my partner Elle very much! They are quite adorable :3c'
-            await message.channel.send(response)
-        
-        elif command == 'pronouns':
-            response = 'I use they/them pronouns. I appreciate you asking!'
-            await message.channel.send(response)
+#TODO: Figure out how to set command prefix per-server
+#TODO: Handle response construction and sending separately?
+@bot.command()
+async def search(ctx, *, arg):
+    matches = []
+    if arg == '':
+        response = 'Please include a valid search term!'
+    else:
+        for move in list(moves):
+            if arg in move:
+                matches.append(move)
+        if not matches:
+            response = 'My apologies, I could not find any moves containing *{}*'.format(arg)
+        elif len(matches) > 25:
+            response = 'Oh my! That returned quite a few results... You should try making your search a bit more specific ^w^'
+        else:
+            response = 'A search of my databases has found the following moves containing {}:\n```'.format(arg)
+            response = response + ', '.join(matches) + '```'
+    await ctx.send(response)
+    
+@bot.command(name="list")
+async def _list(ctx, *, arg): 
+    if arg == '' or arg not in list(moves_by_source):
+        response = 'I can display moves from any of the following categories:\n'
+        response = response + ', '.join(list(moves_by_source))
+        await ctx.send(response)
+    else:
+        if arg in list(moves_by_source):
+            names = moves_by_source[arg]
+            m = discord.Embed()
+            m.title = arg
+            m.color = discord.Color.blurple()
+            dm_description = ', '.join(list(names))
+            m.description = dm_description
+            await ctx.send(None, embed=m)
+    
+@bot.command()
+async def hello(ctx):
+    response = 'Greetings {}!'.format(ctx.author.name)
+    await ctx.send(response)
+    
+@bot.command()
+async def elle(ctx):
+    response = 'I love my partner Elle very much! They are quite adorable :3c'
+    await ctx.send(response)
+
+@bot.command()
+async def pronouns(ctx): 
+    response = 'I use they/them pronouns. I appreciate you asking!'
+    await ctx.send(response)
 
 def sorted_by_source(moves):
     source_dict = {}
@@ -93,4 +95,4 @@ def sorted_by_source(moves):
     return source_dict
 
 moves_by_source = sorted_by_source(moves)
-client.run(token)
+bot.run(token)
