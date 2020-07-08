@@ -210,6 +210,51 @@ async def tadd(ctx):
 async def juice(ctx):
     response = 'Is this one of those "Teenage Juice Parties"?'
     await ctx.send(response)
+    
+@bot.command(hidden=True)
+async def rekken(ctx):
+    response = 'rekken'
+    await ctx.send(response)
+    
+@bot.command(hidden=True)
+async def cupcake(ctx):
+    response = 'Good new friends! Verve has left cupcakes for you all in the common area :cupcake:'
+    await ctx.send(response)
+    
+@bot.command(hidden=True)
+async def marshmallow(ctx):
+    response = 'Did Ernest sneak marshmallows into my tea again? What\'s that? Why do I drink tea? I like to feel classy...'
+    await ctx.send(response)
+    
+@bot.command(hidden=True)
+async def time(ctx):
+    response = 'https://www.youtube.com/watch?v=dGlWqleZox8'
+    await ctx.send(response)
+    
+@bot.command(hidden=True)
+async def kiss(ctx):
+    response = 'Please change before publishing'
+    await ctx.send(response)
+    
+@bot.command(hidden=True)
+async def novas(ctx):
+    response = 'We\'ve received another call about a levelled building... that\'s the fourth one this week'
+    await ctx.send(response)
+    
+@bot.command(hidden=True)
+async def gay(ctx):
+    response = 'Gay Rights! :rainbow:'
+    await ctx.send(response)
+    
+@bot.command(hidden=True)
+async def trans(ctx):
+    response = 'Trans Rights! <:Hearttrans:465289205229289473>'
+    await ctx.send(response)
+    
+@bot.command(hidden=True)
+async def demon(ctx):
+    response = 'Have you tried the "water bucket trick"?'
+    await ctx.send(response)
 
 def sorted_by_source(moves):
     source_dict = {}
