@@ -227,7 +227,7 @@ async def rekken(ctx):
     
 @bot.command(hidden=True)
 async def cupcake(ctx):
-    response = 'Good new friends! Verve has left cupcakes for you all in the common area :cupcake:'
+    response = 'Good news, friends! Verve has left cupcakes for you all in the common area :cupcake:'
     await ctx.send(response)
     
 @bot.command(hidden=True)
@@ -263,6 +263,16 @@ async def trans(ctx):
 @bot.command(hidden=True)
 async def demon(ctx):
     response = 'Have you tried the "water bucket trick"?'
+    await ctx.send(response)
+
+@bot.command(hidden=True)
+async def parents(ctx):
+    response = 'So...you learned a shocking secret about your parents. Do not worry, you are not the first and will certainly not be the last to do so in Big Team. You are among friends!'
+    await ctx.send(response)
+
+@bot.command(hidden=True)
+async def shrinkydink(ctx):
+    response = 'The peoples of Veronant are doing very well! Queens Romeant Capulant and Juliant Mo-antigue are leading their people to prosperity.'
     await ctx.send(response)
 
 def sorted_by_source(moves):
