@@ -287,6 +287,54 @@
     "source": "Star Moves",
     "text": "When you shut someone down, roll +Superior. On a 10+, you either inflict a condition on them, make them lose Influence over you, or take Influence over them, your choice. On a 7-9, you either each inflict a condition on the other, or both lose Influence over each other, your choice. On a miss, they gain Influence over you"
   },
+  "two of a kind": {
+	"name": "Two of a Kind",
+	"type": "Passive",
+	"source": "Joined Bonds",
+	"text": " **Two of a kind**: when time passes, you and your other half gain Influence over each other. When you or your other half **pierces the other’s mask**, mark a condition to take a 10+."  
+},
+  "fastball special": {
+	"name": "Fastball special",
+	"type": "Passive",
+	"source": "Joined Bonds",
+	"text": "**Fastball special**: When you perform a coordinated fighting maneuver with your other half, say who takes the lead and who assists. The leader rolls the adult move **overwhelm a vulnerable foe**. The assistant marks a condition."
+},
+  "powers activate": {
+	"name": "Powers, Activate!",
+	"type": "Passive",
+	"source": "Joined Bonds",
+	"text": "**Powers, activate!**: When you and your other half pool your powers, say who takes the lead and who assists. The leader **unleashes their powers** with your combined Freak (max+4). The assistant shifts savior down, Mundane up." 
+},
+  "four eyes are better": {
+	"name": "Four eyes are better",
+	"type": "Passive",
+	"source": "Joined Bonds",
+	"text": "**Four eyes are better**: When you and your other half **assess the situation** from two different vantage points, one of you makes the move, and the other may either clear a condition or ask an additional question. You both get +1 when following the answers."
+},
+  "mirror mirror": {
+	"name": "Mirror, Mirror", 
+	"type": "Passive",
+	"source": "Joined Distinctions",
+	"text": "**Mirror, mirror**: When you **pierce someone’s mask**, you can ask them \"What are you really feeling right now?\", even on a miss. If you do, they can ask you the same question."
+},
+  "shouldering the burden": {
+	"name": "Shouldering the burden", 
+	"type": "Passive",
+	"source": "Joined Distinctions",
+	"text": "**Shouldering the burden**: When you push yourself to do something your other half failed at or can’t do, mark a condition to use the adult move **wield your powers**."
+},
+  "going solo": {
+	"name": "Going solo", 
+	"type": "Passive",
+	"source": "Joined Distinctions",
+	"text": "**Going solo**: When you **directly engage a threat** entirely on your own, you can roll +Superior instead of +Danger."
+},
+  "internal strife": {
+	"name": "Internal strife", 
+	"type": "Passive",
+	"source": "Joined Distinctions",
+	"text": "**Internal strife**: When you snipe about your other half behind their back, remove one Team from the pool and clear a condition." 
+},
   "stick to the mission": {
     "name": "Stick To The Mission",
     "type": "Passive",

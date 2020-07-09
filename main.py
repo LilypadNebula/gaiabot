@@ -81,7 +81,7 @@ async def search(ctx, *, arg):
 async def _list(ctx, *, arg=''): 
     if arg not in list(moves_by_source) or arg == '':
         response = 'I can display moves from any of the following categories:\n'
-        response = response + ', '.join(list(moves_by_source))
+        response = response + ', '.join(sorted(list(moves_by_source)))
         await ctx.send(response)
     else:
         if arg in list(moves_by_source):
