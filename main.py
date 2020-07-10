@@ -340,9 +340,8 @@ async def gaia(ctx):
 
 @bot.command(hidden=True)
 async def whisper(ctx):
-    m = discord.Embed()
-    m.set_image('https://www.sharecopia.com/images/memes2/arson-mean-crime.jpg')
-    await ctx.send(None, m)
+    response = 'https://www.sharecopia.com/images/memes2/arson-mean-crime.jpg'
+    await ctx.send(response)
 
 def sorted_by_source(moves):
     source_dict = {}
