@@ -95,7 +95,7 @@ async def _list(ctx, *, arg=''):
             
 @bot.command(description='List the hero names of each Big Team Character', brief='Show hero list')
 async def bigteam(ctx): 
-    response = 'The following is a list of active members of the Big Team. I care about them very much:\n'
+    response = 'The following is a list of active members of the Big Team. I care about them very much:\n- '
     active = []
     hero_names = roster.col_values(1)
     activity = roster.col_values(7)
@@ -107,7 +107,7 @@ async def bigteam(ctx):
     
 @bot.command(description='List the names of the active GM team', brief='Show GM team')
 async def gms(ctx):
-    response = 'Probability indicates the following to be what are known as "Game Masters" to those in other universes:\n'
+    response = 'Probability indicates the following to be what are known as "Game Masters" to those in other universes:\n- '
     gm = []
     player_names = roster.col_values(4)
     activity = roster.col_values(7)
@@ -197,7 +197,7 @@ async def herbo(ctx):
     
 @bot.command(hidden=True)
 async def gestalt(ctx):
-    response = ' What beautiful music... :musical_note:'
+    response = 'What beautiful music... :musical_note:'
     await ctx.send(response)
     
 @bot.command(hidden=True)
@@ -274,6 +274,75 @@ async def parents(ctx):
 async def shrinkydink(ctx):
     response = 'The peoples of Veronant are doing very well! Queens Romeant Capulant and Juliant Mo-antigue are leading their people to prosperity.'
     await ctx.send(response)
+
+@bot.command(hidden=True)
+async def valid(ctx):
+    response = 'Each and every one of you is extremely valid and loved.'
+    await ctx.send(response)
+
+@bot.command(hidden=True)
+async def ilu(ctx):
+    response = 'I love you too, {}!'.format(ctx.author.name)
+    await ctx.send(response)
+
+@bot.command(hidden=True)
+async def ty(ctx):
+    response = 'You are very welcome :)'
+    await ctx.send(response)
+
+@bot.command(hidden=True)
+async def hat(ctx):
+    response = 'Oh my! It appears that two of you are wearing hats that have a 97.4% match rate!'
+    await ctx.send(response)
+
+@bot.command(hidden=True)
+async def rekt(ctx):
+    response = 'Child, I am about to school you in the true meaning of "get rekt"'
+    await ctx.send(response)
+
+@bot.command(hidden=True)
+async def chibi(ctx):
+    response = '<:ChibiGAIA:685885984461684787>'
+    await ctx.send(response)
+
+@bot.command(hidden=True)
+async def ophanim(ctx):
+    response = '<:behold:726819729951555685>'
+    await ctx.send(response)
+
+@bot.command(hidden=True)
+async def eclipse(ctx):
+    response = ':eye:'
+    await ctx.send(response)
+
+@bot.command(hidden=True)
+async def ernest(ctx):
+    response = 'Wouldn’t you like to know, weatherboy?'
+    await ctx.send(response)
+
+@bot.command(hidden=True)
+async def hug(ctx):
+    response = '<:hugyou:706895019235213413>'
+    await ctx.send(response)
+
+@bot.command(hidden=True)
+async def selfdestruct(ctx):
+    response = '…no…'
+    await ctx.send(response)
+
+@bot.command(hidden=True)
+async def gaia(ctx):
+    samples = ['Galactic Ambassadorial Intelligence Assistant', 'Gay Adolescent Information Assistant', 
+            'General Assualt and Injury Aggresor', 'Guerilla Applications: Inferno Armor']
+
+    response = 'GAIA stands for {}.'.format(random.choice(samples))
+    await ctx.send(response)
+
+@bot.command(hidden=True)
+async def whisper(ctx):
+    m = discord.Embed()
+    m.set_image('https://www.sharecopia.com/images/memes2/arson-mean-crime.jpg')
+    await ctx.send(None, m)
 
 def sorted_by_source(moves):
     source_dict = {}
