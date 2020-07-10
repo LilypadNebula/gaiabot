@@ -307,7 +307,7 @@ async def chibi(ctx):
 
 @bot.command(hidden=True)
 async def ophanim(ctx):
-    response = '<:behold:726819729951555685>'
+    response = ':eyes: :eyes: :eyes: :eyes: :eyes: :eyes:'
     await ctx.send(response)
 
 @bot.command(hidden=True)
