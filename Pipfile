@@ -12,6 +12,7 @@ python-dotenv = "*"
 gspread = "*"
 terminaltables = "*"
 google-auth = "*"
+Pillow = "*"
 
 [requires]
 python_version = "3.8"
