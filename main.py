@@ -375,7 +375,7 @@ async def focus(ctx):
 
 @bot.command(hidden=True)
 async def australia(ctx):
-    response = 'Sounds like a you problem.'
+    response = 'Trapped in Australia without a passport? Sounds like a you problem.'
     await ctx.send(response)
 
 @bot.command(hidden=True)
