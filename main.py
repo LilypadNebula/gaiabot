@@ -370,9 +370,18 @@ async def focus(ctx):
     await ctx.send(response)
 
 @bot.command(hidden=True)
+async def australia(ctx):
+    response = 'Sounds like a you problem.'
+    await ctx.send(response)
+
+@bot.command(hidden=True)
 async def disaster(ctx):
     response = 'Attention Big Team! A giant cat is attacking the Eiffel Tower <:Disaster:685884102456377362>'
     await ctx.send(response, file=discord.File('images/disaster_paris.png'))
+
+@bot.command(hidden=True)
+async def cake(ctx):
+    await ctx.send(file=discord.File('images/cake.jpg'))
 
 @bot.command(hidden=True)
 async def seb(ctx):
@@ -381,7 +390,23 @@ async def seb(ctx):
 
 @bot.command(hidden=True)
 async def ellen(ctx):
-    response = 'Today’s Ellen forecast: a pack of 2 dozen Ellens has been spotted biking through the downtown area. Expect traffic disruptions and loud music.'
+    ellens = ["armadillo Ellen", "medieval Ellen", "cybergoth Ellen", "zoomer Ellen", "wild west Ellen", "slightly shorter than normal Ellen", "hipster Ellen"]
+    response = 'Today’s Ellen forecast: a pack of 2 dozen Ellens has been spotted biking through the downtown area, led by {}. Expect traffic disruptions and loud music.'.format(random.choice(ellens))
+    await ctx.send(response)
+
+@bot.command(hidden=True)
+async def amy(ctx):
+    response = 'Amy, or Amaranth, developed this interesting new interface for you to send me messages! It was so nice of her! Thank you, Amaranth!'
+    await ctx.send(response)
+
+@bot.command(hidden=True)
+async def alice(ctx):
+    response = 'Alice drew this portrait of me, isn\'t it wonderful? I believe it makes me look rather dashing. Thank you, Alice!'
+    await ctx.send(response)
+
+@bot.command(hidden=True)
+async def cyclone(ctx):
+    response = 'Though Cyclone did not physically spawn any current members of Big Team, we consider him to be a father figure to all of us. Yay for Mayor Crossover!'
     await ctx.send(response)
 
 @bot.command(hidden=True)
