@@ -1,14 +1,18 @@
-import discord
-from discord.ext import commands
+# python built-in
 import json
 import os
 import random
-import google.oauth2.service_account as sa
 
+# external
+import discord
+from discord.ext import commands
 from dotenv import load_dotenv
+import google.oauth2.service_account as sa
 import gspread
+from PIL import Image, ImageFont, ImageDraw
 from terminaltables import AsciiTable
 
+# local
 import config as cfg
 
 load_dotenv()
@@ -287,7 +291,7 @@ async def ilu(ctx):
 
 @bot.command(hidden=True)
 async def ty(ctx):
-    response = 'You are very welcome :)'
+    response = 'You are quite welcome, {}}! Please do not hesitate to get in touch again.'.format(ctx.author.name)
     await ctx.send(response)
 
 @bot.command(hidden=True)
@@ -333,14 +337,66 @@ async def selfdestruct(ctx):
 @bot.command(hidden=True)
 async def gaia(ctx):
     samples = ['Galactic Ambassadorial Intelligence Assistant', 'Gay Adolescent Information Assistant', 
-            'General Assualt and Injury Aggresor', 'Guerilla Applications: Inferno Armor']
+            'General Assualt and Injury Aggresor', 'Guerilla Applications: Inferno Armor', 'Girls Are Incredibly Attractive']
 
     response = 'GAIA stands for {}.'.format(random.choice(samples))
     await ctx.send(response)
 
 @bot.command(hidden=True)
 async def whisper(ctx):
-    response = 'https://www.sharecopia.com/images/memes2/arson-mean-crime.jpg'
+    await ctx.send(file=discord.File('images/whisper.jpg'))
+
+@bot.command(hidden=True)
+async def jackal(ctx, *, arg=''):
+    if arg == '':
+        addressee = ctx.author.name
+    else:
+        addressee = arg
+    draw_text('images/jackal.png', cfg.jackal['outfile'], addressee, cfg.jackal['x'], cfg.jackal['y'])
+    await ctx.send(file=discord.File(cfg.jackal['outfile']))
+
+@bot.command(hidden=True)
+async def y(ctx):
+    await ctx.send(file=discord.File('images/ytomedicine.png'))
+
+@bot.command(hidden=True)
+async def lesbians(ctx):
+    response = 'Are you winning, lesbians?'
+    await ctx.send(response)
+
+@bot.command(hidden=True)
+async def focus(ctx):
+    response = 'Focus, I have access to the search history of the Big Base PC’s and I don’t believe Savior would appreciate this objectification.'
+    await ctx.send(response)
+
+@bot.command(hidden=True)
+async def disaster(ctx):
+    response = 'Attention Big Team! A giant cat is attacking the Eiffel Tower <:Disaster:685884102456377362>'
+    await ctx.send(response, file=discord.File('images/disaster_paris.png'))
+
+@bot.command(hidden=True)
+async def seb(ctx):
+    response = 'Where is Seb? A more accurate query is “When is Seb”'
+    await ctx.send(response)
+
+@bot.command(hidden=True)
+async def ellen(ctx):
+    response = 'Today’s Ellen forecast: a pack of 2 dozen Ellens has been spotted biking through the downtown area. Expect traffic disruptions and loud music.'
+    await ctx.send(response)
+
+@bot.command(hidden=True)
+async def atlanta(ctx):
+    response = 'My calculations there is a {}\% chance that Atlanta is a member of GAMBITE'.format(random.randrange(101))
+    await ctx.send(response)
+
+@bot.command(hidden=True)
+async def gambite(ctx):
+    response = 'The extra \'e\' really sets off my autocorrect module'
+    await ctx.send(response)
+
+@bot.command(hidden=True)
+async def gn(ctx):
+    response = 'Sleep tight {}!'.format(ctx.author.name)
     await ctx.send(response)
 
 def sorted_by_source(moves):
@@ -350,6 +406,13 @@ def sorted_by_source(moves):
             source_dict[info['source']] = []
         source_dict[info['source']].append(name)
     return source_dict
+
+def draw_text(img_name, dest, text, x, y):
+    img = Image.open(img_name)
+    draw = ImageDraw.Draw(img)
+    font = ImageFont.truetype(cfg.font['set'], cfg.font['size'])
+    draw.text((x, y), text, (255,255,255), font=font)
+    img.save(dest)
 
 moves_by_source = sorted_by_source(moves)
 bot.run(token)
