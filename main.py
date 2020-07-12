@@ -356,12 +356,16 @@ async def jackal(ctx, *, arg=''):
     await ctx.send(file=discord.File(cfg.jackal['outfile']))
 
 @bot.command(hidden=True)
+async def x(ctx):
+    await ctx.send(file=discord.File('images/xtodoubt.png'))
+
+@bot.command(hidden=True)
 async def y(ctx):
     await ctx.send(file=discord.File('images/ytomedicine.png'))
 
 @bot.command(hidden=True)
 async def lesbians(ctx):
-    response = 'Are you winning, lesbians?'
+    response = 'Are you winning, lesbians? <:Heartlesbian:563154255712878603>'
     await ctx.send(response)
 
 @bot.command(hidden=True)
@@ -411,7 +415,7 @@ async def cyclone(ctx):
 
 @bot.command(hidden=True)
 async def atlanta(ctx):
-    response = r'My calculations there is a {}\% chance that Atlanta is a member of GAMBITE'.format(random.randrange(101))
+    response = 'By my calculations there is a {}\% chance that Atlanta is a member of GAMBITE'.format(random.randrange(101))
     await ctx.send(response)
 
 @bot.command(hidden=True)
