@@ -16,7 +16,7 @@ from terminaltables import AsciiTable
 import config as cfg
 
 load_dotenv()
-token = os.getenv(cfg.files['guild_env'])
+token = os.getenv(cfg.files['bot_token'])
 
 with open(cfg.files['moves']) as f:
   moves = json.load(f)
@@ -291,7 +291,7 @@ async def ilu(ctx):
 
 @bot.command(hidden=True)
 async def ty(ctx):
-    response = 'You are quite welcome, {}}! Please do not hesitate to get in touch again.'.format(ctx.author.name)
+    response = 'You are quite welcome, {}! Please do not hesitate to get in touch again.'.format(ctx.author.name)
     await ctx.send(response)
 
 @bot.command(hidden=True)
@@ -386,7 +386,7 @@ async def ellen(ctx):
 
 @bot.command(hidden=True)
 async def atlanta(ctx):
-    response = 'My calculations there is a {}\% chance that Atlanta is a member of GAMBITE'.format(random.randrange(101))
+    response = r'My calculations there is a {}\% chance that Atlanta is a member of GAMBITE'.format(random.randrange(101))
     await ctx.send(response)
 
 @bot.command(hidden=True)
