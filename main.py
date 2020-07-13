@@ -394,8 +394,13 @@ async def seb(ctx):
 
 @bot.command(hidden=True)
 async def ellen(ctx):
-    ellens = ["armadillo Ellen", "medieval Ellen", "cybergoth Ellen", "zoomer Ellen", "wild west Ellen", "slightly shorter than normal Ellen", "hipster Ellen"]
-    response = 'Today’s Ellen forecast: a pack of 2 dozen Ellens has been spotted biking through the downtown area, led by {}. Expect traffic disruptions and loud music.'.format(random.choice(ellens))
+    ellens = ["armadillo Ellen", "medieval Ellen", "cybergoth Ellen", "zoomer Ellen", "wild west Ellen", "slightly shorter than normal Ellen", "hipster Ellen",
+                "eye of Horus Ellen", "demon Ellen", "vampire Ellen", "cat Ellen", "dog Ellen", "prep Ellen", "theater Ellen", "cheerleader Ellen", "mecha pilot Ellen", 
+                "robo-Ellen 3000", "angel Ellen", "1400's ellen", "pirate Ellen"]
+    forecasts = ['a pack of 2 dozen Ellens has been spotted biking through the downtown area, led by {}. Expect traffic disruptions and loud music.',
+                 'there\'s been a disturbance at the mall as {} has started a brawl over Tay\'s new costume.',
+                 'a gang of Ellen\'s led by {} has been seen roaming the High School and pushing people into lockers']
+    response = 'Today’s Ellen forecast: {}'.format(random.choice(forecasts).format(random.choice(ellens)))
     await ctx.send(response)
 
 @bot.command(hidden=True)
@@ -427,6 +432,10 @@ async def gambite(ctx):
 async def gn(ctx):
     response = 'Sleep tight {}!'.format(ctx.author.name)
     await ctx.send(response)
+
+@bot.command(hidden=True)
+async def og(ctx):
+    await ctx.send(file=discord.File('images/knowvergrowth.png'))
 
 def sorted_by_source(moves):
     source_dict = {}
