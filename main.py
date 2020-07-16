@@ -437,6 +437,11 @@ async def gn(ctx):
 async def og(ctx):
     await ctx.send(file=discord.File('images/knowvergrowth.png'))
 
+@bot.command(hidden=True)
+async def lily(ctx):
+    response = 'Happy Birthday Lily! Thank you for creating my interface <3'
+    await ctx.send(response)
+
 def sorted_by_source(moves):
     source_dict = {}
     for name, info in moves.items():
