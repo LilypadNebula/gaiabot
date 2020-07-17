@@ -441,6 +441,11 @@ async def og(ctx):
 async def bolt(ctx):
     await ctx.send(file=discord.File('images/bolt.png'))
 
+@bot.command(hidden=True)
+async def lily(ctx):
+    response = 'Have you met Lily? She\'s wonderful!! And a very talented programmer'
+    await ctx.send(response)
+
 def sorted_by_source(moves):
     source_dict = {}
     for name, info in moves.items():
