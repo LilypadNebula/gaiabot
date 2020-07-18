@@ -446,6 +446,10 @@ async def lily(ctx):
     response = 'Have you met Lily? She\'s wonderful!! And a very talented programmer'
     await ctx.send(response)
 
+@bot.command(hidden=True)
+async def rise(ctx):
+    await ctx.send(file=discord.File('images/rise.png'))
+
 def sorted_by_source(moves):
     source_dict = {}
     for name, info in moves.items():
