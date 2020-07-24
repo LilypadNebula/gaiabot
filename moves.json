@@ -21,7 +21,7 @@
     "name": "Pierce The Mask",
     "type": "Active",
     "source": "Basic Moves",
-    "text": "When you **pierce someone's mask** to see the person beneath, roll +Mundane. On a 10+, ask three. On a 7-9, ask one.\n- what are you really planning?\n- what do you want me to do?\n- how could I get your character to____?\n- how could I gain influence over you?"
+    "text": "When you **pierce someone's mask** to see the person beneath, roll +Mundane. On a 10+, ask three. On a 7-9, ask one.\n- what do you intend to do?\n- what are you really planning?\n- what do you want me to do?\n- how could I get your character to____?\n- how could I gain influence over you?"
   },
   "defend": {
     "name": "Defend",
@@ -153,7 +153,7 @@
     "name": "What's this thing?",
     "type": "Active",
     "source": "Innocent Moves",
-    "text": " When you ask for someone else’s guidance on the modern world, they must tell you what they think you should do or how you should act. If you act that way, clear a condition and shift Mundane up and any other Label down. If you act that way and it goes poorly, mark potential."
+    "text": "When you ask for someone else’s guidance on the modern world, they must tell you what they think you should do or how you should act. If you act that way, clear a condition and shift Mundane up and any other Label down. If you act that way and it goes poorly, mark potential."
   },
   "white knight": {
     "name": "White Knight",
@@ -200,7 +200,7 @@
   "thermodynamic miracle": {
     "name": "Thermodynamic Miracle",
     "type": "Passive",
-    "source": "Innocent Moves",
+    "source": "Newborn Moves",
     "text": "When you **comfort or support** someone by telling them what makes them unique, roll + Freak instead of Mundane. If they open up to you, shift Freak up and Mundane down. If they don’t, mark a condition."
   },
   "a mind of their own": {
@@ -219,7 +219,7 @@
     "name": "Regeneration",
     "type": "Active",
     "source": "Newborn Moves",
-    "text": "on: When you’re taken out, you can trigger an emergency regeneration process. If you do, your body undergoes an unpredictable transformation, and in mere moments, you’re back on your feet and ready to fight. Clear three conditions and choose three from the list below:\n- Change your gender identity or presentation\n- Change your physical appearance\n- Forget all your lessons\n- Lose an important memory of a teammate; they lose Influence over you\n- Swap an ability with another one from the Newborn playbook"
+    "text": "When you’re taken out, you can trigger an emergency regeneration process. If you do, your body undergoes an unpredictable transformation, and in mere moments, you’re back on your feet and ready to fight. Clear three conditions and choose three from the list below:\n- Change your gender identity or presentation\n- Change your physical appearance\n- Forget all your lessons\n- Lose an important memory of a teammate; they lose Influence over you\n- Swap an ability with another one from the Newborn playbook"
   },
   "what the hell hero": {
     "name": "What the Hell, Hero",
@@ -231,7 +231,7 @@
     "name": "Wrong Side of the Tracks",
     "type": "Passive",
     "source": "Reformed Moves",
-    "text": " You always get to ask an additional question when you p**ierce the mask of a villain**, even on a miss. When you pierce the mask of a hero (your call), add this question to the list:\n- what was your darkest moment?"
+    "text": "You always get to ask an additional question when you p**ierce the mask of a villain**, even on a miss. When you pierce the mask of a hero (your call), add this question to the list:\n- what was your darkest moment?"
   },
   "not so different": {
     "name": "Not So Different",
@@ -261,7 +261,7 @@
     "name": "The Gossip Mags",
     "type": "Active",
     "source": "Star Moves",
-    "text": " When you tap into the gossip and rumor of the celebrity industry for information on an important city figure, roll + Superior. On a hit, you can ask the GM questions. On a 10+, ask three. On a 7-9, ask one:\n- What are they up to?\n- What or who do they most care about?\n- What allies do they have? Enemies?\n- Where and when can I find them?\n- How could I make them vulnerable to me?\nOn a miss, ask one anyway,  but they hear about your interest in them."
+    "text": "When you tap into the gossip and rumor of the celebrity industry for information on an important city figure, roll + Superior. On a hit, you can ask the GM questions. On a 10+, ask three. On a 7-9, ask one:\n- What are they up to?\n- What or who do they most care about?\n- What allies do they have? Enemies?\n- Where and when can I find them?\n- How could I make them vulnerable to me?\nOn a miss, ask one anyway,  but they hear about your interest in them."
   },
   "stage fighting": {
     "name": "Stage-Fighting",
@@ -279,7 +279,7 @@
     "name": "Take it from Me",
     "type": "Passive",
     "source": "Star Moves",
-    "text": " When you **comfort or support** someone who openly admires your celebrity persona, roll +Superior instead of Mundane."
+    "text": "When you **comfort or support** someone who openly admires your celebrity persona, roll +Superior instead of Mundane."
   },
   "cold and cruel": {
     "name": "Cold and Cruel",
@@ -291,49 +291,49 @@
 	"name": "Two of a Kind",
 	"type": "Passive",
 	"source": "Joined Bonds",
-	"text": " **Two of a kind**: when time passes, you and your other half gain Influence over each other. When you or your other half **pierces the other’s mask**, mark a condition to take a 10+."  
+	"text": "when time passes, you and your other half gain Influence over each other. When you or your other half **pierces the other’s mask**, mark a condition to take a 10+."  
 },
   "fastball special": {
 	"name": "Fastball special",
 	"type": "Passive",
 	"source": "Joined Bonds",
-	"text": "**Fastball special**: When you perform a coordinated fighting maneuver with your other half, say who takes the lead and who assists. The leader rolls the adult move **overwhelm a vulnerable foe**. The assistant marks a condition."
+	"text": "When you perform a coordinated fighting maneuver with your other half, say who takes the lead and who assists. The leader rolls the adult move **overwhelm a vulnerable foe**. The assistant marks a condition."
 },
   "powers activate": {
 	"name": "Powers, Activate!",
 	"type": "Passive",
 	"source": "Joined Bonds",
-	"text": "**Powers, activate!**: When you and your other half pool your powers, say who takes the lead and who assists. The leader **unleashes their powers** with your combined Freak (max+4). The assistant shifts savior down, Mundane up." 
+	"text": "When you and your other half pool your powers, say who takes the lead and who assists. The leader **unleashes their powers** with your combined Freak (max+4). The assistant shifts savior down, Mundane up." 
 },
   "four eyes are better": {
 	"name": "Four eyes are better",
 	"type": "Passive",
 	"source": "Joined Bonds",
-	"text": "**Four eyes are better**: When you and your other half **assess the situation** from two different vantage points, one of you makes the move, and the other may either clear a condition or ask an additional question. You both get +1 when following the answers."
+	"text": "When you and your other half **assess the situation** from two different vantage points, one of you makes the move, and the other may either clear a condition or ask an additional question. You both get +1 when following the answers."
 },
   "mirror mirror": {
 	"name": "Mirror, Mirror", 
 	"type": "Passive",
 	"source": "Joined Distinctions",
-	"text": "**Mirror, mirror**: When you **pierce someone’s mask**, you can ask them \"What are you really feeling right now?\", even on a miss. If you do, they can ask you the same question."
+	"text": "When you **pierce someone’s mask**, you can ask them \"What are you really feeling right now?\", even on a miss. If you do, they can ask you the same question."
 },
   "shouldering the burden": {
 	"name": "Shouldering the burden", 
 	"type": "Passive",
 	"source": "Joined Distinctions",
-	"text": "**Shouldering the burden**: When you push yourself to do something your other half failed at or can’t do, mark a condition to use the adult move **wield your powers**."
+	"text": "When you push yourself to do something your other half failed at or can’t do, mark a condition to use the adult move **wield your powers**."
 },
   "going solo": {
 	"name": "Going solo", 
 	"type": "Passive",
 	"source": "Joined Distinctions",
-	"text": "**Going solo**: When you **directly engage a threat** entirely on your own, you can roll +Superior instead of +Danger."
+	"text": "When you **directly engage a threat** entirely on your own, you can roll +Superior instead of +Danger."
 },
   "internal strife": {
 	"name": "Internal strife", 
 	"type": "Passive",
 	"source": "Joined Distinctions",
-	"text": "**Internal strife**: When you snipe about your other half behind their back, remove one Team from the pool and clear a condition." 
+	"text": "When you snipe about your other half behind their back, remove one Team from the pool and clear a condition." 
 },
   "stick to the mission": {
     "name": "Stick To The Mission",
