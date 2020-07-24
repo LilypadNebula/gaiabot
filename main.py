@@ -83,13 +83,13 @@ async def search(ctx, *, arg):
     
 @bot.command(name="list",description="Use the command without an argument to get the categories, then use the command with one of those to get the moves within!", help="e.g. gaia!list Basic Moves", brief="List categories or moves within them")
 async def _list(ctx, *, arg=''): 
-    if arg not in moves_lower or arg == '':
+    if arg.lower() not in list(moves_by_source) or arg == '':
         response = 'I can display moves from any of the following categories:\n'
-        response = response + ', '.join(sorted(lmoves_lower))
+        response = response + ', '.join(sorted(list(moves_by_source)))
         await ctx.send(response)
     else:
-        if arg.lower() in moves_lower:
-            names = moves_by_source[arg]
+        if arg.lower() in list(moves_by_source):
+            names = moves_by_source[arg.lower()]
             m = discord.Embed()
             m.title = arg
             m.color = discord.Color.blurple()
@@ -453,9 +453,9 @@ async def rise(ctx):
 def sorted_by_source(moves):
     source_dict = {}
     for name, info in moves.items():
-        if info['source'] not in source_dict:
-            source_dict[info['source']] = []
-        source_dict[info['source']].append(name)
+        if info['source'].lower() not in source_dict:
+            source_dict[info['source'].lower()] = []
+        source_dict[info['source'].lower()].append(name)
     return source_dict
 
 def draw_text(img_name, dest, text, x, y):
@@ -466,5 +466,4 @@ def draw_text(img_name, dest, text, x, y):
     img.save(dest)
 
 moves_by_source = sorted_by_source(moves)
-moves_lower = map(lambda x: x.lower(), list(moves_by_source))
 bot.run(token)
