@@ -88,7 +88,7 @@ async def _list(ctx, *, arg=''):
         response = response + ', '.join(sorted(list(moves_by_source)))
         await ctx.send(response)
     else:
-        if arg.lower() in map(lambda x: x.lower, list(moves_by_source)):
+        if arg.lower() in map(lambda x: x.lower(), list(moves_by_source)):
             names = moves_by_source[arg]
             m = discord.Embed()
             m.title = arg
