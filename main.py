@@ -83,12 +83,12 @@ async def search(ctx, *, arg):
     
 @bot.command(name="list",description="Use the command without an argument to get the categories, then use the command with one of those to get the moves within!", help="e.g. gaia!list Basic Moves", brief="List categories or moves within them")
 async def _list(ctx, *, arg=''): 
-    if arg not in list(moves_by_source) or arg == '':
+    if arg not in moves_lower or arg == '':
         response = 'I can display moves from any of the following categories:\n'
-        response = response + ', '.join(sorted(list(moves_by_source)))
+        response = response + ', '.join(sorted(lmoves_lower))
         await ctx.send(response)
     else:
-        if arg.lower() in map(lambda x: x.lower(), list(moves_by_source)):
+        if arg.lower() in moves_lower:
             names = moves_by_source[arg]
             m = discord.Embed()
             m.title = arg
@@ -466,4 +466,5 @@ def draw_text(img_name, dest, text, x, y):
     img.save(dest)
 
 moves_by_source = sorted_by_source(moves)
+moves_lower = map(lambda x: x.lower(), list(moves_by_source))
 bot.run(token)
