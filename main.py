@@ -451,8 +451,12 @@ async def rise(ctx):
     await ctx.send(file=discord.File('images/rise.png'))
 
 @bot.command(hidden=True)
-async def kurt(ctx):
-    await ctx.send('{} sold me weed.'.format(ctx.author.name))
+async def kurt(ctx, *, arg=None):
+    if not arg:
+        addressee = ctx.author.name
+    else:
+        addressee = arg
+    await ctx.send('{} sold me weed.'.format(addressee))
 
 @bot.command(hidden=True)
 async def pikachu(ctx):
