@@ -196,7 +196,7 @@ async def greenhouse(ctx):
     
 @bot.command(hidden=True)
 async def herbo(ctx):
-    response = 'Has ~~Boon~~Amaranth leaked valuable ~~Big~~GM Team secrets again? Unrelated: remind me to look into development of amnestic gases'
+    response = 'Has ~~Boon~~ Amaranth leaked valuable ~~Big~~ GM Team secrets again? Unrelated: remind me to look into development of amnestic gases'
     await ctx.send(response)
     
 @bot.command(hidden=True)
@@ -449,6 +449,26 @@ async def lily(ctx):
 @bot.command(hidden=True)
 async def rise(ctx):
     await ctx.send(file=discord.File('images/rise.png'))
+
+@bot.command(hidden=True)
+async def kurt(ctx):
+    await ctx.send('{} sold me weed.'.format(ctx.author.name))
+
+@bot.command(hidden=True)
+async def pikachu(ctx):
+    await ctx.send(file=discord.File('images/pikachu.gif'))
+
+@bot.command(hidden=True)
+async def space(ctx):
+    await ctx.send('Time is... fucked and space is... kinky?')
+
+@bot.command(hidden=True)
+async def toni(ctx):
+    await ctx.send('Receiving a message from Big Team Fan Club for you: “Keep it up, {}! You’re grrrrand!”'.format(ctx.author.name))
+
+@bot.command(hidden=True)
+async def lavish(ctx):
+    await ctx.send(file=discord.File('images/lavish_memes/{}'.format(random.choice(os.listdir('images/lavish_memes')))))
 
 def sorted_by_source(moves):
     source_dict = {}
