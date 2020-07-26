@@ -8,7 +8,16 @@ external = {'roster': 'Big Team Roster and Playbook Totals',
 prefix = 'gaia!'
 max_results = 25
 jackal = {'x': 360,
-		  'y': 305,
-		  'outfile': 'images/im_out.png'}
-font = {'size': 20,
+	  'y': 305,
+	  'outfile': 'images/im_out.png'}
+draw = {'x': 320,
+	'y': 350,
+	'width': 20,
+	'lines': 5,
+	'outfile': 'images/draw_out.png'}
+jackal_font = {'size': 20,
+		'color': [255, 255, 255],
+		'set': 'fonts/impact.ttf'}
+draw_font = {'size': 40,
+		'color': [0, 0, 0],
 		'set': 'fonts/impact.ttf'}

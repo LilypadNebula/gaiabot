@@ -11,6 +11,7 @@ import google.oauth2.service_account as sa
 import gspread
 from PIL import Image, ImageFont, ImageDraw
 from terminaltables import AsciiTable
+import textwrap
 
 # local
 import config as cfg
@@ -106,7 +107,7 @@ async def bigteam(ctx):
     for index, hero in enumerate(hero_names):
         if hero and activity[index] in ['Active', 'GM Character']:
             active.append(hero)
-    response = response + '\n- '.join(active)
+    response = response + '\n- '.join(sorted(active))
     await ctx.send(response)
     
 @bot.command(description='List the names of the active GM team', brief='Show GM team')
@@ -118,7 +119,7 @@ async def gms(ctx):
     for index, player in enumerate(player_names):
         if player and activity[index] == 'GM Character':
             gm.append(player)
-    response = response + '\n- '.join(gm)
+    response = response + '\n- '.join(sorted(gm))
     await ctx.send(response)
     
 @bot.command(description='Displays a table of playbooks and their totals', brief='List playbook totals')
@@ -352,7 +353,7 @@ async def jackal(ctx, *, arg=''):
         addressee = ctx.author.name
     else:
         addressee = arg
-    draw_text('images/jackal.png', cfg.jackal['outfile'], addressee, cfg.jackal['x'], cfg.jackal['y'])
+    draw_text('images/jackal.png', cfg.jackal['outfile'], addressee, cfg.jackal['x'], cfg.jackal['y'], cfg.jackal_font)
     await ctx.send(file=discord.File(cfg.jackal['outfile']))
 
 @bot.command(hidden=True)
@@ -474,6 +475,13 @@ async def toni(ctx):
 async def lavish(ctx):
     await ctx.send(file=discord.File('images/lavish_memes/{}'.format(random.choice(os.listdir('images/lavish_memes')))))
 
+@bot.command(hidden=True)
+async def draw25(ctx, *, arg):
+    lines = textwrap.wrap(arg, cfg.draw['width'])
+    text = '\n'.join(lines[:cfg.draw['lines']])
+    draw_text('images/draw25.png', cfg.draw['outfile'], text, cfg.draw['x'], cfg.draw['y'], cfg.draw_font)
+    await ctx.send(file=discord.File(cfg.draw['outfile']))
+
 def sorted_by_source(moves):
     source_dict = {}
     for name, info in moves.items():
@@ -482,11 +490,11 @@ def sorted_by_source(moves):
         source_dict[info['source']].append(name)
     return source_dict
 
-def draw_text(img_name, dest, text, x, y):
+def draw_text(img_name, dest, text, x, y, text_cfg):
     img = Image.open(img_name)
     draw = ImageDraw.Draw(img)
-    font = ImageFont.truetype(cfg.font['set'], cfg.font['size'])
-    draw.text((x, y), text, (255,255,255), font=font)
+    font = ImageFont.truetype(text_cfg['set'], text_cfg['size'])
+    draw.text((x, y), text, tuple(text_cfg['color']), font=font)
     img.save(dest)
 
 moves_by_source = sorted_by_source(moves)
