@@ -1,6 +1,7 @@
 # python built-in
 import json
 import os
+import pickle
 import random
 
 # external
@@ -101,24 +102,14 @@ async def _list(ctx, *, arg=''):
 @bot.command(description='List the hero names of each Big Team Character', brief='Show hero list')
 async def bigteam(ctx): 
     response = 'The following is a list of active members of the Big Team. I care about them very much:\n- '
-    active = []
-    hero_names = roster.col_values(1)
-    activity = roster.col_values(7)
-    for index, hero in enumerate(hero_names):
-        if hero and activity[index] in ['Active', 'GM Character']:
-            active.append(hero)
+    active = grab_by_type(1, ['Active', 'GM Character'])
     response = response + '\n- '.join(sorted(active))
     await ctx.send(response)
     
 @bot.command(description='List the names of the active GM team', brief='Show GM team')
 async def gms(ctx):
     response = 'Probability indicates the following to be what are known as "Game Masters" to those in other universes:\n- '
-    gm = []
-    player_names = roster.col_values(4)
-    activity = roster.col_values(7)
-    for index, player in enumerate(player_names):
-        if player and activity[index] == 'GM Character':
-            gm.append(player)
+    gm = grab_by_type(4, ['GM Character'])
     response = response + '\n- '.join(sorted(gm))
     await ctx.send(response)
     
@@ -128,7 +119,7 @@ async def totals(ctx):
     display = AsciiTable(pb_totals.get('A4:D27')).table
     response = response + str(display) + '\n```'
     await ctx.send(response)
-        
+
 @bot.command(description='Displays a link to the Masks West Marches Wiki', brief='Show wiki link')
 async def wiki(ctx):
     response = 'Here is a link to the wiki page! {}'.format(cfg.external['wiki'])
@@ -144,22 +135,22 @@ async def links(ctx):
 https://calendar.google.com/calendar?cid=azZwaGk4YzRydm9tbzR2Ymw4OTF0bjMyZjhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ
 
 **Roll20 Join Link**
-https://app.roll20.net/join/3467791/P7ltTA
+https://app.roll20.net/join/3467791/P7ltTA 
 
-**"How To Join A Game" Folder**
-https://drive.google.com/drive/folders/1tXLomA1YC2L59N7ihJCgZCqqGFIV7KvH?usp=sharing
+**Current Player Roster**
+https://docs.google.com/spreadsheets/d/13YSKZdPtjm60OxiU2TR9JSaNC2SGn3BYPuqrAV-IrSQ/edit#gid=0
 
 **A People's Guide To Big Team**
 https://docs.google.com/document/d/187XCDY6-3NZi5H2618ShW0vAWR7r0rKtuBurPu1e1Ks/edit?usp=sharing
+
+**Player Character PC and NPC Relationships Page** (BROKEN AND UNDER CONSTRUCTION)
+https://docs.google.com/spreadsheets/d/1cdMMKthB_8g9Bkjwv6BlsGUaNoNTgzuHTDEVNhk2VXw/edit?usp=sharing
 
 **Masks Off(s)**
 S2: https://youtu.be/h5Qc2Pv34jQ
 S3: https://youtu.be/Kclb5_5IAq0
 S4: (Parts 1 +2) https://youtu.be/z4D8jEJqt7Y 
-https://youtu.be/yzf_5RGZV_o
-
-**Family Photo Vol. 1** :chinhands: (Made by the wonderful Alice)
-https://drive.google.com/file/d/1YRTqnQxI3FfFA9lgZU5zxWt6MO-b2Kdm/view'''
+https://youtu.be/yzf_5RGZV_o'''
     await ctx.send(response, embed=m)
 
 @bot.command(brief='Greet GAIA')
@@ -472,8 +463,13 @@ async def toni(ctx):
     await ctx.send('Receiving a message from Big Team Fan Club for you: “Keep it up, {}! You’re grrrrand!”'.format(ctx.author.name))
 
 @bot.command(hidden=True)
-async def lavish(ctx):
-    await ctx.send(file=discord.File('images/lavish_memes/{}'.format(random.choice(os.listdir('images/lavish_memes')))))
+async def lavish(ctx, *, arg=None):
+    samples = os.listdir('images/lavish_memes')
+    if not (arg and arg.isdigit() and int(arg)-1 in range(len(samples))):
+        filename = random.choice(samples)
+    else:
+        filename = samples[int(arg)-1]
+    await ctx.send(file=discord.File('images/lavish_memes/{}'.format(filename)))
 
 @bot.command(hidden=True)
 async def draw25(ctx, *, arg):
@@ -481,6 +477,15 @@ async def draw25(ctx, *, arg):
     text = '\n'.join(lines[:cfg.draw['lines']])
     draw_text('images/draw25.png', cfg.draw['outfile'], text, cfg.draw['x'], cfg.draw['y'], cfg.draw_font)
     await ctx.send(file=discord.File(cfg.draw['outfile']))
+
+def grab_by_type(col, types):
+    output = []
+    names = roster.col_values(col)
+    activity = roster.col_values(cfg.external['activity_col'])
+    for index, name in enumerate(names):
+        if name and activity[index] in types:
+            output.append(name)
+    return output
 
 def sorted_by_source(moves):
     source_dict = {}

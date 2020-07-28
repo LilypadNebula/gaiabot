@@ -1,9 +1,11 @@
 files = {'service_auth': 'GOOGLE_SERVICE_ACCOUNT',
          'bot_token': 'DISCORD_SECRET',
-	       'debug_token': 'DEBUG_SECRET',
+	     'debug_token': 'DEBUG_SECRET',
          'moves': 'moves.json',
          'encounters': 'danger_room.txt'}
 external = {'roster': 'Big Team Roster and Playbook Totals',
+			'hero_col': 1,
+			'activity_col': 7,
             'wiki': 'https://masks-west-marches.fandom.com/wiki/Masks_West_Marches_Wiki'}
 prefix = 'gaia!'
 max_results = 25
