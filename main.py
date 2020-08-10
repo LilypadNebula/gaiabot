@@ -1,4 +1,5 @@
 # python built-in
+import atexit
 import json
 import os
 import pickle
@@ -10,6 +11,7 @@ from discord.ext import commands
 from dotenv import load_dotenv
 import google.oauth2.service_account as sa
 import gspread
+import matplotlib.pyplot as plt
 from PIL import Image, ImageFont, ImageDraw
 from terminaltables import AsciiTable
 import textwrap
@@ -17,14 +19,10 @@ import textwrap
 # local
 import config as cfg
 
+random.seed()
 load_dotenv()
-token = os.getenv(cfg.files['bot_token'])
-
-with open(cfg.files['moves']) as f:
-  moves = json.load(f)
 
 json_creds = os.getenv(cfg.files['service_auth'])
-
 creds_dict = json.loads(json_creds)
 creds_dict["private_key"] = creds_dict["private_key"].replace("\\\\n", "\n")
 creds = sa.Credentials.from_service_account_info(creds_dict, scopes = [
@@ -36,6 +34,17 @@ player_info = gc.open(cfg.external['roster'])
 roster = player_info.get_worksheet(0)
 pb_totals = player_info.get_worksheet(1)
 
+try:
+    hist = pickle.load(open(cfg.files['hist'], 'rb'))
+    print('Load of {} succesful'.format(cfg.files['hist']))
+except:
+    print('Unable to load Histogram, generating new dictionary')
+    hist = dict.fromkeys(range(101), 0)
+    
+with open(cfg.files['moves']) as f:
+    moves = json.load(f)
+
+token = os.getenv(cfg.files['bot_token'])
 bot = commands.Bot(command_prefix=cfg.prefix)
 act = discord.Game(name="Big Team | {}".format(cfg.prefix))
 
@@ -411,9 +420,22 @@ async def cyclone(ctx):
     await ctx.send(response)
 
 @bot.command(hidden=True)
-async def atlanta(ctx):
-    response = 'By my calculations there is a {}\% chance that Atlanta is a member of GAMBITE'.format(random.randrange(101))
-    await ctx.send(response)
+async def atlanta(ctx, *, arg=None):
+    if arg=='show':
+        plt.bar(list(hist.keys()), hist.values(), color='g')
+        plt.xlabel('Gambite Chance (%)')
+        plt.ylabel('Occurences')
+        plt.title('Atlanta Gambite membership likelihood')
+        plt.savefig(cfg.plot['outfile'])
+        await ctx.send(file=discord.File(cfg.plot['outfile']))
+    else:
+        chance = random.randrange(101)
+        if not hist[chance]:
+            hist[chance] = 1
+        else:
+            hist[chance] += 1
+        response = 'By my calculations there is a {}\% chance that Atlanta is a member of GAMBITE'.format(chance)
+        await ctx.send(response)
 
 @bot.command(hidden=True)
 async def gambite(ctx):
@@ -487,6 +509,17 @@ def grab_by_type(col, types):
             output.append(name)
     return output
 
+def draw_text(img_name, dest, text, x, y, text_cfg):
+    img = Image.open(img_name)
+    draw = ImageDraw.Draw(img)
+    font = ImageFont.truetype(text_cfg['set'], text_cfg['size'])
+    draw.text((x, y), text, tuple(text_cfg['color']), font=font)
+    img.save(dest)
+
+def save_hist():
+    print('Shutting down, dumping histogram to {}'.format(cfg.files['hist']))
+    pickle.dump(hist, open(cfg.files['hist'], 'wb'))
+
 def sorted_by_source(moves):
     source_dict = {}
     for name, info in moves.items():
@@ -495,12 +528,6 @@ def sorted_by_source(moves):
         source_dict[info['source']].append(name)
     return source_dict
 
-def draw_text(img_name, dest, text, x, y, text_cfg):
-    img = Image.open(img_name)
-    draw = ImageDraw.Draw(img)
-    font = ImageFont.truetype(text_cfg['set'], text_cfg['size'])
-    draw.text((x, y), text, tuple(text_cfg['color']), font=font)
-    img.save(dest)
-
 moves_by_source = sorted_by_source(moves)
+atexit.register(save_hist)
 bot.run(token)
