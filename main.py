@@ -482,7 +482,7 @@ async def shade(ctx):
 
 @bot.command(hidden=True,aliases=['nya'])
 async def nyah(ctx):
-    await ctx.send(file=discord.File('images/nyah.png'))
+    await ctx.send(file=discord.File('images/nyah.jpg'))
 
 @bot.command(hidden=True)
 async def whiz(ctx):
