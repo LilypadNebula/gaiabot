@@ -480,6 +480,14 @@ async def pikachu(ctx):
 async def shade(ctx):
     await ctx.send(file=discord.File('images/shade.png'))
 
+@bot.command(hidden=True,aliases=['nya'])
+async def nyah(ctx):
+    await ctx.send(file=discord.File('images/nyah.png'))
+
+@bot.command(hidden=True)
+async def whiz(ctx):
+    await ctx.send(file=discord.File('images/whiz.png'))
+
 @bot.command(hidden=True)
 async def space(ctx):
     await ctx.send('Time is... fucked and space is... kinky?')
