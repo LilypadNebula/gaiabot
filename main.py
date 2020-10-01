@@ -196,7 +196,7 @@ async def greenhouse(ctx):
     await ctx.send(response)
     
 @bot.command(hidden=True)
-async def herbo(ctx):
+async def thembo(ctx):
     response = 'Has ~~Boon~~ Amaranth leaked valuable ~~Big~~ GM Team secrets again? Unrelated: remind me to look into development of amnestic gases'
     await ctx.send(response)
     
@@ -406,7 +406,7 @@ async def ellen(ctx):
 
 @bot.command(hidden=True)
 async def amy(ctx):
-    response = 'Amy, or Amaranth, developed this interesting new interface for you to send me messages! It was so nice of her! Thank you, Amaranth!'
+    response = 'Amy, or Amaranth, developed this interesting new interface for you to send me messages! It was so nice of hir! Thank you, Amaranth!'
     await ctx.send(response)
 
 @bot.command(hidden=True)
@@ -454,6 +454,10 @@ async def og(ctx):
 @bot.command(hidden=True)
 async def bolt(ctx):
     await ctx.send(file=discord.File('images/bolt.png'))
+
+@bot.command(hidden=True)
+async def cadenza(ctx):
+    await ctx.send(file=discord.File('images/cadenza.gif'))
 
 @bot.command(hidden=True)
 async def lily(ctx):
