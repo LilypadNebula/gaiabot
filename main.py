@@ -348,6 +348,10 @@ async def whisper(ctx):
     await ctx.send(file=discord.File('images/whisper.jpg'))
 
 @bot.command(hidden=True)
+async def aman(ctx):
+    await ctx.send(file=discord.File('images/aman.gif'))
+
+@bot.command(hidden=True)
 async def jackal(ctx, *, arg=''):
     if arg == '':
         addressee = ctx.author.name
