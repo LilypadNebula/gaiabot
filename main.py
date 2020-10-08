@@ -347,7 +347,7 @@ async def gaia(ctx):
 async def whisper(ctx):
     await ctx.send(file=discord.File('images/whisper.jpg'))
 
-@bot.command(hidden=True,aliases=['eclipse'])
+@bot.command(hidden=True)
 async def aman(ctx):
     await ctx.send(file=discord.File('images/aman.gif'))
 
