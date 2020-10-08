@@ -347,7 +347,7 @@ async def gaia(ctx):
 async def whisper(ctx):
     await ctx.send(file=discord.File('images/whisper.jpg'))
 
-@bot.command(hidden=True)
+@bot.command(hidden=True,aliases=['eclipse'])
 async def aman(ctx):
     await ctx.send(file=discord.File('images/aman.gif'))
 
@@ -455,7 +455,7 @@ async def gn(ctx):
 async def og(ctx):
     await ctx.send(file=discord.File('images/knowvergrowth.png'))
 
-@bot.command(hidden=True)
+@bot.command(hidden=True,aliases=['signal'])
 async def bolt(ctx):
     await ctx.send(file=discord.File('images/bolt.png'))
 
