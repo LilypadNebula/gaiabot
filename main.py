@@ -351,6 +351,11 @@ async def whisper(ctx):
 async def aman(ctx):
     await ctx.send(file=discord.File('images/aman.gif'))
 
+
+@bot.command(hidden=True,aliases=['pumpkin'])
+async def halloween(ctx):
+    await ctx.send(file=discord.File('images/halloween.gif'))
+
 @bot.command(hidden=True)
 async def jackal(ctx, *, arg=''):
     if arg == '':
