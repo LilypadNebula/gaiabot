@@ -4,6 +4,7 @@ import json
 import os
 import pickle
 import random
+import string
 
 # external
 import discord
@@ -62,6 +63,8 @@ async def on_message(message):
 
     if text.startswith('[') and text.endswith(']'):
         parsed = text[1:-1]
+        parsed = parsed.translate(str.maketrans('', '', string.punctuation))
+        parsed = parsed.lower()
         try:
             res = moves[parsed]
         except KeyError:
