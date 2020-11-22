@@ -128,7 +128,7 @@ async def gms(ctx):
 @bot.command(description='Displays a table of playbooks and their totals', brief='List playbook totals')
 async def totals(ctx):
     response = 'An analysis of the current Big Team roster yielded the following playbook totals:```\n'
-    display = AsciiTable(pb_totals.get('A4:D27')).table
+    display = AsciiTable(pb_totals.get('A4:E27')).table
     response = response + str(display) + '\n```'
     await ctx.send(response)
 
