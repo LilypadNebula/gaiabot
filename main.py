@@ -401,6 +401,10 @@ async def cake(ctx):
     await ctx.send(file=discord.File('images/cake.jpg'))
 
 @bot.command(hidden=True)
+async def cambria(ctx):
+    await ctx.send(file=discord.File('images/cambria.jpg'))
+
+@bot.command(hidden=True)
 async def seb(ctx):
     response = 'Where is Seb? A more accurate query is “When is Seb”'
     await ctx.send(response)
