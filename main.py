@@ -402,7 +402,7 @@ async def cake(ctx):
 
 @bot.command(hidden=True)
 async def cambria(ctx):
-    await ctx.send(file=discord.File('images/cambria.jpg'))
+    await ctx.send(file=discord.File('images/cambria.png'))
 
 @bot.command(hidden=True)
 async def seb(ctx):
